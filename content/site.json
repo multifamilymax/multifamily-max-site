@@ -7,14 +7,38 @@
     "subtitle": "Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets."
   },
   "markets": {
-    "lead": "Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.",
+    "lead": "Coverage for all of southern wisconsin",
     "items": [
-      { "name": "Milwaukee", "blurb": "Established multifamily core with diverse renter base and steady trades.", "image": "/assets/market-mke.jpg" },
-      { "name": "Madison", "blurb": "University & state employment anchor; resilient fundamentals.", "image": "/assets/market-msn.jpg" },
-      { "name": "Racine & Kenosha", "blurb": "IL/WI commuter corridor with value-add opportunities.", "image": "/assets/market-rk.jpg" },
-      { "name": "Waukesha", "blurb": "Strong incomes, suburban product, stable rent growth.", "image": "/assets/market-wk.jpg" },
-      { "name": "Rock County", "blurb": "Manufacturing base with improving fundamentals.", "image": "/assets/market-rock.jpg" },
-      { "name": "Brown County", "blurb": "Green Bay metro; reliable demand and investor-friendly price points.", "image": "/assets/market-brown.jpg" }
+      {
+        "name": "Milwaukee",
+        "blurb": "Established multifamily core with diverse renter base and steady trades.",
+        "image": "/assets/market-mke.jpg"
+      },
+      {
+        "name": "Madison",
+        "blurb": "University & state employment anchor; resilient fundamentals.",
+        "image": "/assets/market-msn.jpg"
+      },
+      {
+        "name": "Racine & Kenosha",
+        "blurb": "IL/WI commuter corridor with value-add opportunities.",
+        "image": "/assets/market-rk.jpg"
+      },
+      {
+        "name": "Waukesha",
+        "blurb": "Strong incomes, suburban product, stable rent growth.",
+        "image": "/assets/market-wk.jpg"
+      },
+      {
+        "name": "Rock County",
+        "blurb": "Manufacturing base with improving fundamentals.",
+        "image": "/assets/market-rock.jpg"
+      },
+      {
+        "name": "Brown County",
+        "blurb": "Green Bay metro; reliable demand and investor-friendly price points.",
+        "image": "/assets/market-brown.jpg"
+      }
     ]
   },
   "subscribe": {
@@ -26,12 +50,30 @@
   "services": {
     "lead": "We help owners price, position, and sell with confidence. Boutique speed, local data, and a deep investor network deliver clean execution and maximum value.",
     "items": [
-      { "title": "Seller Representation", "body": "BOV, pricing strategy, confidential/off-market options, targeted marketing, negotiation, and diligence through close." },
-      { "title": "Buyer Representation", "body": "On- and off-market sourcing, underwriting support, lender introductions, and offer strategy." },
-      { "title": "Valuations", "body": "Asset and development-site valuations to inform refinancing, partner discussions, or go-to-market decisions." },
-      { "title": "Market Insights", "body": "Comps, cap rates, rent trends, and supply/demand snapshots tailored to each submarket." },
-      { "title": "Local Network", "body": "Vetted lenders, attorneys, property managers, and inspectors to move fast and de-risk execution." },
-      { "title": "Portfolio Planning", "body": "Hold/sell analysis, 1031 timelines, and long-term planning for generational owners and syndicators." }
+      {
+        "title": "Seller Representation",
+        "body": "BOV, pricing strategy, confidential/off-market options, targeted marketing, negotiation, and diligence through close."
+      },
+      {
+        "title": "Buyer Representation",
+        "body": "On- and off-market sourcing, underwriting support, lender introductions, and offer strategy."
+      },
+      {
+        "title": "Valuations",
+        "body": "Asset and development-site valuations to inform refinancing, partner discussions, or go-to-market decisions."
+      },
+      {
+        "title": "Market Insights",
+        "body": "Comps, cap rates, rent trends, and supply/demand snapshots tailored to each submarket."
+      },
+      {
+        "title": "Local Network",
+        "body": "Vetted lenders, attorneys, property managers, and inspectors to move fast and de-risk execution."
+      },
+      {
+        "title": "Portfolio Planning",
+        "body": "Hold/sell analysis, 1031 timelines, and long-term planning for generational owners and syndicators."
+      }
     ]
   },
   "about": {
@@ -43,7 +85,10 @@
       "Strong investor and lender network"
     ],
     "photo": "/assets/about.jpg",
-    "cta": { "label": "Contact Us", "href": "#contact" }
+    "cta": {
+      "label": "Contact Us",
+      "href": "#contact"
+    }
   },
   "contact": {
     "intro": "Contact us today for any of your multifamily needs. We're here to help!",
