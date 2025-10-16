@@ -3,53 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Multifamily Max | Southern Wisconsin Multifamily Brokerage</title>
-  <meta name="description" content="BOVs, valuations, and brokerage for 5+ unit apartments across Milwaukee–Madison and nearby markets. Boutique, owner-first service." />
+  <title>Multifamily Max | Southern Wisconsin Multifamily</title>
+  <meta name="description" content="Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets." />
   <meta name="theme-color" content="#0E2E50" />
   <link rel="icon" href="/assets/favicon.ico" />
   <style>
-    :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08); }
+    :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
     *{ box-sizing:border-box } html{ scroll-behavior:smooth }
     body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--dark); background:#fff }
     a{ color:inherit; text-decoration:none }
     .container{ max-width:1100px; margin:0 auto; padding:0 20px }
+
     header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0 }
     .brand{ font-weight:800; letter-spacing:.2px; color:var(--navy) }
     .brand small{ display:block; font-weight:600; color:var(--muted); font-size:12px; margin-top:2px }
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
+
     .hero{ position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden }
     .hero::before{ content:""; position:absolute; inset:0; background:url('/assets/hero.jpg') center/cover no-repeat; filter:grayscale(.2) contrast(1.05) brightness(.9) }
     .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,46,80,.65), rgba(14,46,80,.65)) }
-    .hero-inner{ position:relative; color:#fff; text-align:center; padding:80px 20px }
-    .hero h1{ font-size:42px; line-height:1.1; margin:0 0 10px }
-    .hero p{ font-size:18px; margin:0 0 26px; color:#e5e7eb }
-    .btn-row{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
-    .btn{ padding:12px 16px; border-radius:12px; font-weight:700 }
-    .btn.primary{ background:var(--teal); color:#fff }
-    .btn.ghost{ border:2px solid #fff; color:#fff }
-    .stats{ background:var(--light) }
-    .stats-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-    .stat{ background:#fff; border-radius:16px; box-shadow:var(--shadow); padding:20px; text-align:center }
-    .stat .kpi{ font-size:26px; font-weight:800; color:var(--navy) }
-    .stat .label{ font-size:14px; color:var(--muted) }
+    .hero-inner{ position:relative; color:#fff; text-align:left; padding:80px 20px; width:100% }
+    .hero h1{ font-size:44px; line-height:1.1; margin:0 0 10px }
+    .hero p{ font-size:18px; margin:0; color:#e5e7eb }
+
     section{ padding:64px 0 }
     .section-title{ font-size:28px; margin:0 0 12px; color:var(--navy) }
     .section-lead{ color:var(--muted); max-width:760px }
-    .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px }
-    .card{ border:1px solid #e5e7eb; border-radius:16px; padding:22px; box-shadow:var(--shadow); background:#fff }
-    .num{ font-weight:800; color:var(--teal); font-size:14px; letter-spacing:.1em }
-    .card h3{ margin:6px 0 8px; font-size:18px }
-    .card p{ margin:0; color:#374151; font-size:15px }
-    .about{ display:grid; grid-template-columns:320px 1fr; gap:26px; align-items:center }
-    .about img{ width:100%; border-radius:18px; box-shadow:var(--shadow); object-fit:cover; height:320px }
+
     .market-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
     .market-card{ border-radius:16px; overflow:hidden; box-shadow:var(--shadow); border:1px solid #e5e7eb; background:#fff }
     .market-card img{ width:100%; height:160px; object-fit:cover; display:block }
     .market-card .mc-body{ padding:16px }
     .market-card h4{ margin:0 0 6px; color:var(--navy) }
     .market-card p{ margin:0; color:#374151; font-size:14px }
+
+    .subscribe{ background:#27404A; color:#fff }
+    .subscribe .section-title{ color:#fff; font-size:34px }
+    .subscribe .section-lead{ color:#d1d5db }
+    .subscribe-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:26px; align-items:start }
+    .sub-form{ background:#1f3640; border:1px solid #314a54; border-radius:16px; padding:18px }
+    .sub-form label{ display:block; font-size:13px; color:#e5e7eb; margin:8px 0 4px }
+    .sub-row{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px }
+    .sub-form input{ width:100%; border:1px solid #425c66; background:#f9fafb; border-radius:10px; padding:10px; font:inherit }
+    .sub-form .btn{ margin-top:12px }
+
+    .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:24px }
+    .card{ border:1px solid #e5e7eb; border-radius:16px; padding:22px; box-shadow:var(--shadow); background:#fff }
+    .num{ font-weight:800; color:var(--teal); font-size:14px; letter-spacing:.1em }
+    .card h3{ margin:6px 0 8px; font-size:18px }
+    .card p{ margin:0; color:#374151; font-size:15px }
+
+    .about{ display:grid; grid-template-columns:320px 1fr; gap:26px; align-items:center }
+    .about img{ width:100%; border-radius:18px; box-shadow:var(--shadow); object-fit:cover; height:320px }
+
     .contact{ display:grid; grid-template-columns:1.1fr .9fr; gap:26px }
     form{ background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:20px; box-shadow:var(--shadow) }
     label{ display:block; font-size:14px; color:#374151; margin:10px 0 6px }
@@ -57,13 +65,14 @@
     textarea{ min-height:120px; resize:vertical }
     .contact .info{ background:var(--light); border-radius:16px; padding:20px }
     .info h3{ margin-top:0 }
+
     footer{ padding:26px 0; border-top:1px solid #e5e7eb; color:#6b7280 }
+
     @media (max-width:960px){
-      .services-grid,.market-grid{ grid-template-columns:1fr 1fr }
-      .about{ grid-template-columns:1fr }
-      .contact{ grid-template-columns:1fr }
-      .stats-grid{ grid-template-columns:1fr }
-      .hero h1{ font-size:34px }
+      .market-grid,.services-grid{ grid-template-columns:1fr 1fr }
+      .about,.contact,.subscribe-grid{ grid-template-columns:1fr }
+      .hero h1{ font-size:36px }
+      .sub-row{ grid-template-columns:1fr }
     }
   </style>
 </head>
@@ -74,41 +83,71 @@
         <a href="#home" class="brand">Multifamily Max<small>Southern Wisconsin Multifamily</small></a>
       </div>
       <nav>
+        <a href="#markets">Markets</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
-        <a href="#markets">Markets</a>
-        <a href="#contact" class="cta-btn">Request a BOV</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="cta-btn" id="nav-subscribe">Subscribe</a>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-inner container">
-      <h1 id="hero-title">Southern Wisconsin Multifamily Brokerage</h1>
-      <p id="hero-subtitle">BOVs, valuations, and deal execution for 5+ unit apartments across Milwaukee–Madison and surrounding markets.</p>
-      <div class="btn-row">
-        <a href="#contact" class="btn primary" id="hero-primary">Get a Free BOV</a>
-        <a href="#services" class="btn ghost" id="hero-secondary">See Services</a>
+      <h1 id="hero-title">Southern Wisconsin Multifamily Expert</h1>
+      <p id="hero-subtitle">Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets.</p>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section id="markets">
+    <div class="container">
+      <h2 class="section-title">Markets</h2>
+      <p class="section-lead" id="markets-lead">Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.</p>
+      <div class="market-grid" id="market-grid" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE -->
+  <section id="subscribe" class="subscribe">
+    <div class="container subscribe-grid">
+      <div>
+        <h2 class="section-title" id="sub-title">Subscribe to Multifamily Max Invest</h2>
+        <p class="section-lead" id="sub-lead">
+          Stay informed and sign up for our newsletter to receive in-depth construction reports, expert deal packages, and valuable insights for making informed investment decisions.
+        </p>
       </div>
+      <form class="sub-form" onsubmit="event.preventDefault(); const url=(window.__SITE.content.subscribe.form_action||'#'); if(url.startsWith('mailto:')){ location.href=url+'?subject='+encodeURIComponent('Subscribe')+'&body='+encodeURIComponent('First: '+(document.getElementById('sub-first').value||'')+'\\nLast: '+(document.getElementById('sub-last').value||'')+'\\nEmail: '+(document.getElementById('sub-email').value||'')); } else { window.open(url,'_blank'); }">
+        <div class="sub-row">
+          <div>
+            <label for="sub-first">First name</label>
+            <input id="sub-first" type="text" />
+          </div>
+          <div>
+            <label for="sub-last">Last name</label>
+            <input id="sub-last" type="text" />
+          </div>
+          <div>
+            <label for="sub-email">Email<span style="color:#ef4444">*</span></label>
+            <input id="sub-email" type="email" required />
+          </div>
+        </div>
+        <button class="btn" id="sub-button" style="background:#fff;color:#0E2E50;border-radius:10px;font-weight:700;padding:10px 14px">Subscribe</button>
+      </form>
     </div>
   </section>
 
-  <section class="stats">
-    <div class="container stats-grid" id="stats-grid">
-      <!-- populated via JS -->
-    </div>
-  </section>
-
+  <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <h2 class="section-title">Services</h2>
       <p class="section-lead" id="services-lead">We help owners price, position, and sell with confidence. Boutique speed, local data, and a deep investor network deliver clean execution and maximum value.</p>
-      <div class="services-grid" id="services-grid">
-        <!-- populated via JS -->
-      </div>
+      <div class="services-grid" id="services-grid"></div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" style="background:var(--light)">
     <div class="container about">
       <img id="about-photo" src="/assets/about.jpg" alt="Max Fiascone" />
@@ -116,50 +155,48 @@
         <h2 class="section-title" id="about-title">Meet Max Fiascone</h2>
         <p class="section-lead" id="about-body">I help owners of 5–100 unit properties across Southern Wisconsin price and sell with confidence. Focused on secondary and tertiary submarkets where local relationships and data matter most.</p>
         <ul id="about-bullets"></ul>
-        <p><a class="cta-btn" href="#contact" id="about-cta">Email & Schedule</a></p>
+        <p><a class="cta-btn" href="#contact" id="about-cta">Contact Us</a></p>
       </div>
     </div>
   </section>
 
-  <section id="markets">
-    <div class="container">
-      <h2 class="section-title">Markets</h2>
-      <p class="section-lead" id="markets-lead">Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.</p>
-      <div class="market-grid" id="market-grid" style="margin-top:18px">
-        <!-- populated via JS -->
-      </div>
-    </div>
-  </section>
-
+  <!-- CONTACT -->
   <section id="contact" style="background:var(--light)">
     <div class="container contact">
-      <form id="contact-form" onsubmit="this.action='mailto:'+window.__SITE.content.contact.email+'?subject='+encodeURIComponent(window.__SITE.content.contact.subject)+'&body='+encodeURIComponent('Name: '+(document.getElementById('name').value||'')+'\nEmail: '+(document.getElementById('email').value||'')+'\nPhone: '+(document.getElementById('phone').value||'')+'\nAddress(es): '+(document.getElementById('addr').value||'')+'\nUnits: '+(document.getElementById('units').value||'')+'\nNotes: '+(document.getElementById('notes').value||''));" method="post">
-        <h2 style="margin-top:0;color:var(--navy)">Request a BOV</h2>
-        <label for="name">Name</label>
-        <input id="name" type="text" required />
-        <label for="email">Email</label>
-        <input id="email" type="email" required />
-        <label for="phone">Phone</label>
-        <input id="phone" type="tel" />
-        <label for="addr">Property address(es)</label>
-        <input id="addr" type="text" />
-        <label for="units">Units</label>
-        <input id="units" type="number" min="0" />
-        <label for="notes">Notes</label>
-        <textarea id="notes"></textarea>
-        <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+      <div class="info">
+        <h2 class="section-title">Contact.</h2>
+        <p class="section-lead" id="contact-intro">Contact us today for any of your multifamily needs. We're here to help!</p>
+        <p><strong>Phone</strong><br/><a id="contact-phone" href="#">(847) 970-1233</a></p>
+        <p><strong>Email</strong><br/><a id="contact-email" href="#">max@multifamily-max.com</a></p>
+      </div>
+
+      <form id="contact-form" onsubmit="this.action='mailto:'+window.__SITE.content.contact.email+'?subject='+encodeURIComponent('Website Contact')+'&body='+encodeURIComponent('Name: '+(document.getElementById('first').value||'')+' '+(document.getElementById('last').value||'')+'\\nEmail: '+(document.getElementById('email').value||'')+'\\nPhone: '+(document.getElementById('phone').value||'')+'\\nMessage: '+(document.getElementById('message').value||''));" method="post">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label for="first">First name</label>
+            <input id="first" type="text" />
+          </div>
+          <div>
+            <label for="last">Last name</label>
+            <input id="last" type="text" />
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label for="email">Email<span style="color:#ef4444">*</span></label>
+            <input id="email" type="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" />
+          </div>
+        </div>
+        <label for="message">Message<span style="color:#ef4444">*</span></label>
+        <textarea id="message" required></textarea>
+        <div style="margin-top:14px;">
           <button class="btn primary" type="submit" id="contact-submit">Send</button>
-          <span style="font-size:13px;color:var(--muted)" id="contact-hint">This opens your email client; include rent roll/NOI if available.</span>
         </div>
       </form>
-      <div class="info">
-        <h3>Contact</h3>
-        <p><strong>Email:</strong> <a id="contact-email" href="#">max@multifamily-max.com</a><br/>
-        <strong>Phone:</strong> <a id="contact-phone" href="#">(847) 970‑1233</a><br/>
-        <strong>Service area:</strong> <span id="contact-area">Milwaukee–Madison corridor & surrounding counties</span></p>
-        <p><strong>Office hours:</strong> <span id="contact-hours">Tue–Fri mornings/lunch & after 4 PM CST</span></p>
-        <p><em id="contact-privacy">Confidentiality guaranteed. Your info is never shared without permission.</em></p>
-      </div>
     </div>
   </section>
 
@@ -168,29 +205,41 @@
   </footer>
 
   <script>
-    // Load content from /content/site.json and hydrate the page
+    // Load content
     window.__SITE = { content: {} };
     fetch('/content/site.json')
       .then(r => r.json())
       .then(data => {
         window.__SITE.content = data;
+
+        // Nav: Subscribe destination
+        const navSub = document.getElementById('nav-subscribe');
+        if (navSub && data.nav && data.nav.subscribe_href) {
+          navSub.setAttribute('href', data.nav.subscribe_href);
+        }
+
         // Hero
         document.getElementById('hero-title').textContent = data.hero.title;
         document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
-        document.getElementById('hero-primary').textContent = data.hero.primary_cta.label;
-        document.getElementById('hero-secondary').textContent = data.hero.secondary_cta.label;
-        document.getElementById('hero-primary').setAttribute('href', data.hero.primary_cta.href || '#contact');
-        document.getElementById('hero-secondary').setAttribute('href', data.hero.secondary_cta.href || '#services');
 
-        // Stats
-        const sg = document.getElementById('stats-grid');
-        sg.innerHTML = '';
-        data.stats.forEach(s => {
-          const d = document.createElement('div');
-          d.className = 'stat';
-          d.innerHTML = '<div class="kpi">'+s.kpi+'</div><div class="label">'+s.label+'</div>';
-          sg.appendChild(d);
+        // Markets
+        document.getElementById('markets-lead').textContent = data.markets.lead;
+        const mg = document.getElementById('market-grid');
+        mg.innerHTML = '';
+        data.markets.items.forEach(m => {
+          const card = document.createElement('div');
+          card.className = 'market-card';
+          card.innerHTML = '<img src="'+(m.image||'/assets/market.jpg')+'" alt="'+m.name+'" />'
+                         + '<div class="mc-body"><h4>'+m.name+'</h4><p>'+m.blurb+'</p></div>';
+          mg.appendChild(card);
         });
+
+        // Subscribe section
+        document.getElementById('sub-title').textContent = data.subscribe.title;
+        document.getElementById('sub-lead').textContent = data.subscribe.lead;
+        if (data.subscribe.button_label) {
+          document.getElementById('sub-button').textContent = data.subscribe.button_label;
+        }
 
         // Services
         document.getElementById('services-lead').textContent = data.services.lead;
@@ -215,33 +264,30 @@
         document.getElementById('about-cta').textContent = data.about.cta.label;
         document.getElementById('about-cta').href = data.about.cta.href || '#contact';
 
-        // Markets
-        document.getElementById('markets-lead').textContent = data.markets.lead;
-        const mg = document.getElementById('market-grid');
-        mg.innerHTML='';
-        data.markets.items.forEach(m => {
-          const card = document.createElement('div');
-          card.className='market-card';
-          card.innerHTML = '<img src="'+(m.image || '/assets/market.jpg')+'" alt="'+m.name+'" /><div class="mc-body"><h4>'+m.name+'</h4><p>'+m.blurb+'</p></div>';
-          mg.appendChild(card);
-        });
-
         // Contact
         const ce = document.getElementById('contact-email');
         const cp = document.getElementById('contact-phone');
-        ce.textContent = data.contact.email;
-        ce.href = 'mailto:'+data.contact.email;
-        cp.textContent = data.contact.phone_display || data.contact.phone;
-        cp.href = 'tel:'+data.contact.phone;
-        document.getElementById('contact-area').textContent = data.contact.area;
-        document.getElementById('contact-hours').textContent = data.contact.hours;
-        document.getElementById('contact-privacy').textContent = data.contact.privacy;
+        ce.textContent = data.contact.email; ce.href = 'mailto:'+data.contact.email;
+        cp.textContent = data.contact.phone_display || data.contact.phone; cp.href = 'tel:'+data.contact.phone;
+        document.getElementById('contact-intro').textContent = data.contact.intro;
         document.getElementById('contact-submit').textContent = data.contact.submit_label || 'Send';
-        document.getElementById('contact-hint').textContent = data.contact.hint || 'This opens your email client.';
       })
       .catch(err => console.error('Content load error', err));
 
     document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Identity widget so invites/resets work anywhere -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', () => {
+        const hash = window.location.hash || '';
+        if (/confirmation_token|recovery_token/.test(hash)) {
+          window.netlifyIdentity.open();
+        }
+      });
+    }
   </script>
 </body>
 </html>
