@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Multifamily Max | Admin</title>
   </head>
+  <!-- Netlify Identity widget so invite/reset links work anywhere -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', () => {
+      const hash = window.location.hash || '';
+      if (/confirmation_token|recovery_token/.test(hash)) {
+        window.netlifyIdentity.open(); // show login/reset UI
+      }
+    });
+  }
+</script>
+
   <body>
     <!-- Netlify Identity widget (enables login/reset UI) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
