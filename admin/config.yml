@@ -1,0 +1,93 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "content/site.json"
+        label: "Main Content"
+        name: "content"
+        fields:
+          - {label: "Hero Title", name: "hero.title", widget: "string"}
+          - {label: "Hero Subtitle", name: "hero.subtitle", widget: "text"}
+          - label: "Primary CTA"
+            name: "hero.primary_cta"
+            widget: "object"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Href", name: "href", widget: "string", default: "#contact"}
+          - label: "Secondary CTA"
+            name: "hero.secondary_cta"
+            widget: "object"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Href", name: "href", widget: "string", default: "#services"}
+
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "KPI", name: "kpi", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Lead", name: "lead", widget: "text"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Body", name: "body", widget: "text"}
+
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Body", name: "body", widget: "text"}
+              - {label: "Bullets", name: "bullets", widget: "list", field: {label: Bullet, name: bullet, widget: string}}
+              - {label: "Photo (path)", name: "photo", widget: "string", default: "/assets/about.jpg"}
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Href", name: "href", widget: "string", default: "#contact"}
+
+          - label: "Markets"
+            name: "markets"
+            widget: "object"
+            fields:
+              - {label: "Lead", name: "lead", widget: "text"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Blurb", name: "blurb", widget: "text"}
+                  - {label: "Image (path)", name: "image", widget: "string", required: false}
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Subject", name: "subject", widget: "string", default: "BOV Request"}
+              - {label: "Phone (link)", name: "phone", widget: "string"}
+              - {label: "Phone (display)", name: "phone_display", widget: "string"}
+              - {label: "Area", name: "area", widget: "string"}
+              - {label: "Hours", name: "hours", widget: "string"}
+              - {label: "Privacy", name: "privacy", widget: "text"}
+              - {label: "Submit Label", name: "submit_label", widget: "string", default: "Send"}
+              - {label: "Hint", name: "hint", widget: "string"}
