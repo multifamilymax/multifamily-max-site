@@ -5,7 +5,6 @@ backend:
 media_folder: "assets"
 public_folder: "/assets"
 
-# Simpler flow for single-file edits
 publish_mode: simple
 
 collections:
@@ -17,31 +16,40 @@ collections:
         name: "content"
         format: "json"
         fields:
+          - label: "Navigation"
+            name: "nav"
+            widget: "object"
+            fields:
+              - { label: "Subscribe Link (href)", name: "subscribe_href", widget: "string", default: "#subscribe" }
+
           - label: "Hero"
             name: "hero"
             widget: "object"
             fields:
               - { label: "Hero Title", name: "title", widget: "string" }
               - { label: "Hero Subtitle", name: "subtitle", widget: "text" }
-              - label: "Primary CTA"
-                name: "primary_cta"
-                widget: "object"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Href", name: "href", widget: "string", default: "#contact" }
-              - label: "Secondary CTA"
-                name: "secondary_cta"
-                widget: "object"
-                fields:
-                  - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Href", name: "href", widget: "string", default: "#services" }
 
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
+          - label: "Markets"
+            name: "markets"
+            widget: "object"
             fields:
-              - { label: "KPI", name: "kpi", widget: "string" }
-              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Blurb", name: "blurb", widget: "text" }
+                  - { label: "Image (path)", name: "image", widget: "string", required: false }
+
+          - label: "Subscribe Section"
+            name: "subscribe"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", default: "Subscribe to Multifamily Max Invest" }
+              - { label: "Lead", name: "lead", widget: "text" }
+              - { label: "Button Label", name: "button_label", widget: "string", default: "Subscribe" }
+              - { label: "Form Action URL", name: "form_action", widget: "string", default: "mailto:max@multifamily-max.com" }
 
           - label: "Services"
             name: "services"
@@ -70,32 +78,15 @@ collections:
                 name: "cta"
                 widget: "object"
                 fields:
-                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string", default: "Contact Us" }
                   - { label: "Href", name: "href", widget: "string", default: "#contact" }
-
-          - label: "Markets"
-            name: "markets"
-            widget: "object"
-            fields:
-              - { label: "Lead", name: "lead", widget: "text" }
-              - label: "Items"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Name", name: "name", widget: "string" }
-                  - { label: "Blurb", name: "blurb", widget: "text" }
-                  - { label: "Image (path)", name: "image", widget: "string", required: false }
 
           - label: "Contact"
             name: "contact"
             widget: "object"
             fields:
+              - { label: "Intro text", name: "intro", widget: "text", default: "Contact us today for any of your multifamily needs. We're here to help!" }
               - { label: "Email", name: "email", widget: "string" }
-              - { label: "Subject", name: "subject", widget: "string", default: "BOV Request" }
               - { label: "Phone (link)", name: "phone", widget: "string" }
               - { label: "Phone (display)", name: "phone_display", widget: "string" }
-              - { label: "Area", name: "area", widget: "string" }
-              - { label: "Hours", name: "hours", widget: "string" }
-              - { label: "Privacy", name: "privacy", widget: "text" }
               - { label: "Submit Label", name: "submit_label", widget: "string", default: "Send" }
-              - { label: "Hint", name: "hint", widget: "string" }
