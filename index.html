@@ -21,12 +21,26 @@
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
 
+    /* --- HERO --- */
     .hero{ position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden }
-    .hero::before{ content:""; position:absolute; inset:0; background:url('assets/hero.jpg') center/cover no-repeat; filter:grayscale(.2) contrast(1.05) brightness(.9) }
-    .hero::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,46,80,.65), rgba(14,46,80,.65)) }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:url('assets/hero.jpg') center/cover no-repeat;
+      filter:brightness(1.05) contrast(1);
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(14,46,80,.18), rgba(14,46,80,.18)); /* much lighter overlay */
+    }
     .hero-inner{ position:relative; color:#fff; text-align:left; padding:80px 20px; width:100% }
-    .hero h1{ font-size:44px; line-height:1.1; margin:0 0 10px }
-    .hero p{ font-size:18px; margin:0; color:#e5e7eb }
+    .hero h1{
+      font-size:44px; line-height:1.1; margin:0 0 10px;
+      text-shadow: 0 2px 12px rgba(255,255,255,0.5), 0 1px 10px rgba(0,0,0,0.4);
+    }
+    .hero p{
+      font-size:18px; margin:0; color:#f3f4f6;
+      text-shadow: 0 1px 8px rgba(255,255,255,0.4), 0 1px 10px rgba(0,0,0,0.4);
+    }
 
     section{ padding:64px 0 }
     .section-title{ font-size:28px; margin:0 0 12px; color:var(--navy) }
@@ -94,7 +108,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="home" class="hero">
     <div class="hero-inner container">
       <h1 id="hero-title">Southern Wisconsin Multifamily Expert</h1>
@@ -102,7 +115,6 @@
     </div>
   </section>
 
-  <!-- MARKETS -->
   <section id="markets">
     <div class="container">
       <h2 class="section-title">Markets</h2>
@@ -111,7 +123,6 @@
     </div>
   </section>
 
-  <!-- SUBSCRIBE (native form to Apps Script) -->
   <section id="subscribe" class="subscribe">
     <div class="container subscribe-grid">
       <div>
@@ -122,7 +133,7 @@
       </div>
       <div id="subscribe-box" class="card" style="background:#1f3640;border:1px solid #314a54;border-radius:16px;padding:20px">
         <form id="subscribe-form" novalidate>
-          <input type="text" name="hp" style="display:none"> <!-- honeypot -->
+          <input type="text" name="hp" style="display:none">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div>
               <label class="small" style="color:#d1d5db">First name</label>
@@ -147,7 +158,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="container">
       <h2 class="section-title">Services</h2>
@@ -156,7 +166,6 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about" style="background:var(--light)">
     <div class="container about">
       <img id="about-photo" src="assets/about.jpg" alt="Max Fiascone" />
@@ -169,7 +178,6 @@
     </div>
   </section>
 
-  <!-- CONTACT (native form to Apps Script) -->
   <section id="contact" style="background:var(--light)">
     <div class="container contact">
       <div class="info">
@@ -180,7 +188,7 @@
       </div>
       <div id="contact-box" class="card" style="padding:20px">
         <form id="contact-form" novalidate>
-          <input type="text" name="hp" style="display:none"> <!-- honeypot -->
+          <input type="text" name="hp" style="display:none">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div>
               <label class="small" style="color:#374151">First name</label>
@@ -217,16 +225,12 @@
     <div class="container">© <span id="y"></span> Multifamily Max. All rights reserved.</div>
   </footer>
 
-  <!-- JSON-driven content loader -->
   <script>
     fetch('content/site.json')
       .then(r => r.json())
       .then(data => {
-        // Hero
         document.getElementById('hero-title').textContent = data.hero.title;
         document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
-
-        // Markets
         document.getElementById('markets-lead').textContent = data.markets.lead;
         const mg = document.getElementById('market-grid');
         mg.innerHTML = '';
@@ -237,12 +241,8 @@
                          + '<div class="mc-body"><h4>'+m.name+'</h4><p>'+m.blurb+'</p></div>';
           mg.appendChild(card);
         });
-
-        // Subscribe copy
         document.getElementById('sub-title').textContent = data.subscribe.title;
         document.getElementById('sub-lead').textContent = data.subscribe.lead;
-
-        // Services
         document.getElementById('services-lead').textContent = data.services.lead;
         const sev = document.getElementById('services-grid');
         sev.innerHTML='';
@@ -252,8 +252,6 @@
           div.innerHTML = '<div class="num">'+String(i+1).padStart(2,'0')+'</div><h3>'+it.title+'</h3><p>'+it.body+'</p>';
           sev.appendChild(div);
         });
-
-        // About
         document.getElementById('about-title').textContent = data.about.title;
         document.getElementById('about-body').textContent = data.about.body;
         document.getElementById('about-photo').src = data.about.photo || 'assets/about.jpg';
@@ -264,45 +262,32 @@
         });
         document.getElementById('about-cta').textContent = data.about.cta.label;
         document.getElementById('about-cta').href = data.about.cta.href || '#contact';
-
-        // Contact info
         const ce = document.getElementById('contact-email');
         const cp = document.getElementById('contact-phone');
         ce.textContent = data.contact.email; ce.href = 'mailto:'+data.contact.email;
         cp.textContent = data.contact.phone_display || data.contact.phone; cp.href = 'tel:'+data.contact.phone;
         document.getElementById('contact-intro').textContent = data.contact.intro;
-      })
-      .catch(err => console.error('Content load error', err));
-
+      });
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 
-  <!-- FORMS → Google Apps Script -->
   <script>
-    // Replace these two values:
-    const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';                   // e.g. https://script.google.com/macros/s/XXX/exec
-    const TOKEN     = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';       // must match TOKEN in Apps Script
-
+    const FORMS_API = 'PASTE_YOUR_WEB_APP_URL_HERE';
+    const TOKEN = 'CHANGE_THIS_TO_A_RANDOM_SECRET_32_CHARS';
     function wireForm(formId, statusId, kind) {
       const form = document.getElementById(formId);
       if (!form) return;
       const status = document.getElementById(statusId);
-
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        // Honeypot to block bots
         const hp = form.querySelector('[name="hp"]');
-        if (hp && hp.value) { return; }
-
+        if (hp && hp.value) return;
         const data = Object.fromEntries(new FormData(form).entries());
         data.kind = kind;
         data.token = TOKEN;
         data.page = location.href;
-        data.ua   = navigator.userAgent;
-
+        data.ua = navigator.userAgent;
         status.textContent = 'Sending…';
-
         try {
           const res = await fetch(FORMS_API, {
             method: 'POST',
@@ -311,21 +296,7 @@
           });
           const json = await res.json();
           if (json.ok) {
-            status.textContent = (kind === 'subscribe')
-              ? 'Thanks! You’re on the list.'
-              : 'Thanks! We’ll get back to you shortly.';
+            status.textContent = (kind==='subscribe') ? 'Thanks! You’re on the list.' : 'Thanks! We’ll get back to you shortly.';
             form.reset();
-          } else {
-            status.textContent = 'There was an issue. Please try again or email us directly.';
-          }
-        } catch (err) {
-          status.textContent = 'Network error. Please try again.';
+          } else status.textContent = 'There was an issue. Please try again.';
         }
-      });
-    }
-
-    wireForm('subscribe-form', 'subscribe-status', 'subscribe');
-    wireForm('contact-form', 'contact-status', 'contact');
-  </script>
-</body>
-</html>
