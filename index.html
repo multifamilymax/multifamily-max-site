@@ -297,11 +297,12 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
         });
         document.getElementById('about-cta').textContent = data.about.cta.label;
         document.getElementById('about-cta').href = data.about.cta.href || '#contact';
-        const ce = document.getElementById('contact-email');
-        const cp = document.getElementById('contact-phone');
-        ce.textContent = data.contact.email; ce.href = 'mailto:'+data.contact.email;
-        cp.textContent = data.contact.phone_display || data.contact.phone; cp.href = 'tel:'+data.contact.phone;
-        document.getElementById('contact-intro').textContent = data.contact.intro;
+        if (data.contact.linkedin) {
+  const link = document.createElement('p');
+  link.innerHTML = '<strong>LinkedIn</strong><br/><a href="'+data.contact.linkedin+'" target="_blank" rel="noopener">View Profile</a>';
+  document.querySelector('.contact .info').appendChild(link);
+}
+
       });
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
