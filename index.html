@@ -310,29 +310,50 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
   <script>
     const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';
     const TOKEN = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';
-    function wireForm(formId, statusId, kind) {
+   function wireForm(formId, statusId, kind) {
       const form = document.getElementById(formId);
       if (!form) return;
       const status = document.getElementById(statusId);
+
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const hp = form.querySelector('[name="hp"]');
         if (hp && hp.value) return;
+
         const data = Object.fromEntries(new FormData(form).entries());
         data.kind = kind;
         data.token = TOKEN;
         data.page = location.href;
         data.ua = navigator.userAgent;
+
         status.textContent = 'Sending…';
+
         try {
           const res = await fetch(FORMS_API, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(data)
           });
-          const json = await res.json();
-          if (json.ok) {
-            status.textContent = (kind==='subscribe') ? 'Thanks! You’re on the list.' : 'Thanks! We’ll get back to you shortly.';
+          const txt = await res.text();
+          let json = {};
+          try { json = JSON.parse(txt); } catch (_) {}
+
+          if (res.ok && json.ok) {
+            status.textContent = (kind === 'subscribe')
+              ? 'Thanks! You’re on the list.'
+              : 'Thanks! We’ll get back to you shortly.';
             form.reset();
-          } else status.textContent = 'There was an issue. Please try again.';
+          } else {
+            status.textContent = 'Error: ' + (json.error || txt || ('HTTP ' + res.status));
+            console.error('Submit error', res.status, txt);
+          }
+        } catch (err) {
+          status.textContent = 'Network error. Please try again.';
+          console.error('Network error', err);
         }
+      });
+    }
+
+    wireForm('subscribe-form', 'subscribe-status', 'subscribe');
+    wireForm('contact-form', 'contact-status', 'contact');
+  </script>
