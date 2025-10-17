@@ -32,11 +32,6 @@
   "about": {
     "title": "Meet Max Fiascone",
   "body": "Max Fiascone is a dedicated multifamily investment sales and acquisitions specialist, serving the southern Wisconsin region. With a background in both sales and engineering, he approaches every transaction with a problem-solving mindset, ensuring that property owners and investors receive strategic insights tailored to their specific goals. His deep market expertise and asset specialization allow him to provide top-tier analytics, data-driven strategies, and a comprehensive understanding of local and regional trends, helping clients maximize their investments.\n\nMax takes pride in fostering long-term relationships by offering hands-on guidance throughout the entire investment lifecycle. Whether advising first-time investors or seasoned portfolio owners, he is committed to delivering results-driven solutions that align with their financial objectives.\n\nBeyond real estate, Max and his wife are avid food enthusiasts. They are always on the hunt for the best new restaurants in the area. Max also enjoys an active lifestyle, spending his free time hiking, camping, running, and working out.",
-    "bullets": [
-      "Owner-first, boutique execution",
-      "Data-driven BOVs & underwriting",
-      "Strong investor and lender network"
-    ],
     "photo": "assets/about.jpg",
     "cta": { "label": "Contact Us", "href": "#contact" }
   },
