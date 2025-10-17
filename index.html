@@ -329,14 +329,16 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
         status.textContent = 'Sending…';
 
         try {
-          const res = await fetch(FORMS_API, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          });
-          const txt = await res.text();
-          let json = {};
-          try { json = JSON.parse(txt); } catch (_) {}
+         const params = new URLSearchParams(data); // encodes as key=value&...
+const res = await fetch(FORMS_API, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+  body: params.toString()
+});
+const txt = await res.text();
+let json = {};
+try { json = JSON.parse(txt); } catch (_) {}
+
 
           if (res.ok && json.ok) {
             status.textContent = (kind === 'subscribe')
