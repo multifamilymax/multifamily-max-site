@@ -40,10 +40,12 @@
     "photo": "assets/about.jpg",
     "cta": { "label": "Contact Us", "href": "#contact" }
   },
-  "contact": {
-    "intro": "Contact us today for any of your multifamily needs. We're here to help!",
-    "email": "max@multifamily-max.com",
-    "phone": "+18479701233",
-    "phone_display": "(847) 970-1233"
-  }
+"contact": {
+  "intro": "Contact us today for any of your multifamily needs. We're here to help!",
+  "email": "max@multifamily-max.com",
+  "phone": "+18479701233",
+  "phone_display": "(847) 970-1233",
+  "linkedin": "https://www.linkedin.com/in/max-fiascone-088939191/"
+}
+
 }
