@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "title": "Southern Wisconsin Multifamily Expert",
+    "subtitle": "Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets."
+  },
+  "markets": {
+    "lead": "Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.",
+    "items": [
+      {
+        "name": "Milwaukee",
+        "blurb": "Established multifamily core with diverse renter base and steady trades.",
+        "image": "assets/market-mke.jpg"
+      },
+      {
+        "name": "Madison",
+        "blurb": "University & state employment anchor; resilient fundamentals.",
+        "image": "assets/market-msn.jpg"
+      }
+    ]
+  },
+  "subscribe": {
+    "title": "Subscribe to Multifamily Max Invest",
+    "lead": "Stay informed and sign up for our newsletter to receive in-depth construction reports, expert deal packages, and valuable insights for making informed investment decisions."
+  },
+  "services": {
+    "lead": "We help owners price, position, and sell with confidence. Boutique speed, local data, and a deep investor network deliver clean execution and maximum value.",
+    "items": [
+      {
+        "title": "Seller Representation",
+        "body": "BOV, pricing strategy, confidential/off-market options, targeted marketing, negotiation, and diligence through close."
+      },
+      {
+        "title": "Buyer Representation",
+        "body": "On- and off-market sourcing, underwriting support, lender introductions, and offer strategy."
+      },
+      {
+        "title": "Valuations",
+        "body": "Asset and development-site valuations to inform refinancing, partner discussions, or go-to-market decisions."
+      }
+    ]
+  },
+  "about": {
+    "title": "Meet Max Fiascone",
+    "body": "I help owners of 5\u2013100 unit properties across Southern Wisconsin price and sell with confidence. Focused on secondary and tertiary submarkets where local relationships and data matter most.",
+    "bullets": [
+      "Owner-first, boutique execution",
+      "Data-driven BOVs & underwriting",
+      "Strong investor and lender network"
+    ],
+    "photo": "assets/about.jpg",
+    "cta": {
+      "label": "Contact Us",
+      "href": "#contact"
+    }
+  },
+  "contact": {
+    "intro": "Contact us today for any of your multifamily needs. We're here to help!",
+    "email": "max@multifamily-max.com",
+    "phone": "+18479701233",
+    "phone_display": "(847) 970-1233"
+  }
+}
