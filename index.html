@@ -257,7 +257,7 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
           sev.appendChild(div);
         });
         document.getElementById('about-title').textContent = data.about.title;
-        document.getElementById('about-body').textContent = data.about.body;
+        document.getElementById('about-body').innerHTML = data.about.body.replace(/\n\n/g, '<br><br>');
         document.getElementById('about-photo').src = data.about.photo || 'assets/about.jpg';
         const ab = document.getElementById('about-bullets');
         ab.innerHTML='';
