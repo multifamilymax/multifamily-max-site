@@ -21,8 +21,20 @@ section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
 
     header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
-    .brand-img{ width:360px; height:auto; object-fit:contain; display:block }
-@media (max-width:960px){ .brand-img{ width:260px; height:auto } }
+    .brand-img {
+  width: 180px; /* half the original */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .brand-img {
+    width: 130px; /* smaller on mobile too */
+    height: auto;
+  }
+}
+
 
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
