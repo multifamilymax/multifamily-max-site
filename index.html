@@ -11,14 +11,19 @@
   <style>
     :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
     *{ box-sizing:border-box } html{ scroll-behavior:smooth }
+    /* Offset anchor scrolling for sticky header (fallback; JS will override exactly) */
+html{ scroll-padding-top: 90px }
+section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
+
     body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--dark); background:#fff }
     a{ color:inherit; text-decoration:none }
     .container{ max-width:1100px; margin:0 auto; padding:0 20px }
 
     header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
-    .brand-img{ width:427px; height:91px; object-fit:contain; display:block }
-    @media (max-width:960px){ .brand-img{ width:300px; height:auto } }
+    .brand-img{ width:360px; height:auto; object-fit:contain; display:block }
+@media (max-width:960px){ .brand-img{ width:260px; height:auto } }
+
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
 
@@ -360,3 +365,20 @@ try { json = JSON.parse(txt); } catch (_) {}
     wireForm('subscribe-form', 'subscribe-status', 'subscribe');
     wireForm('contact-form', 'contact-status', 'contact');
   </script>
+  <script>
+  // Dynamically match scroll padding to current header height
+  function setScrollPadding(){
+    const header = document.querySelector('header');
+    if(!header) return;
+    const h = header.offsetHeight;
+    document.documentElement.style.scrollPaddingTop = h + 'px';
+    // Also help any scrollIntoView calls land cleanly
+    document.querySelectorAll('section').forEach(s => { s.style.scrollMarginTop = h + 'px'; });
+  }
+  // Run on load and on resize (debounced)
+  let _t; 
+  window.addEventListener('resize', () => { clearTimeout(_t); _t = setTimeout(setScrollPadding, 100); });
+  window.addEventListener('load', setScrollPadding);
+  setScrollPadding();
+</script>
+
