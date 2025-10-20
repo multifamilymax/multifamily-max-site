@@ -9,6 +9,12 @@
   <meta name="theme-color" content="#0E2E50" />
   <link rel="icon" href="assets/favicon.ico" />
   <style>
+    .footer-logos{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:18px 0 6px}
+.footer-logos img{height:38px;width:auto;display:block}
+.footer-sep{opacity:.35}
+.compliance{font-size:12px;color:#6b7280;text-align:center;line-height:1.4}
+@media (max-width:960px){ .footer-logos img{height:34px} }
+
     :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
     *{ box-sizing:border-box } html{ scroll-behavior:smooth }
     /* Offset anchor scrolling for sticky header (fallback; JS will override exactly) */
@@ -282,7 +288,25 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
   </section>
 
   <footer>
-    <div class="container">© <span id="y"></span> Multifamily Max. All rights reserved.</div>
+    <footer>
+  <div class="container">
+    <div class="footer-logos" role="group" aria-label="Brand affiliations">
+      <img src="assets/logo.png" alt="Multifamily Max logo">
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <img src="assets/apartment-cash-flow-logo.png" alt="Apartment Cash Flow logo">
+    </div>
+
+    <div class="compliance">
+      Licensed through <strong>Apartment Cash Flow, LLC</strong> (Sponsoring Broker).<br>
+      Broker name displayed for advertising compliance.
+    </div>
+
+    <div style="text-align:center;margin-top:12px">
+      © <span id="y"></span> Multifamily Max. All rights reserved.
+    </div>
+  </div>
+</footer>
+
   </footer>
 
   <script>
