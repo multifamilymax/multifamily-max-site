@@ -10,7 +10,16 @@
   <link rel="icon" href="assets/favicon.ico" />
   <style>
     .footer-logos{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:18px 0 6px}
-.footer-logos img{height:38px;width:auto;display:block}
+.footer-logos img{
+  height:50px;       /* bump height to better match Multifamily Max */
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+.footer-logos img[alt*="Apartment Cash Flow"]{
+  height:56px;       /* slightly larger only for the Apartment Cash Flow logo */
+}
+
 .footer-sep{opacity:.35}
 .compliance{font-size:12px;color:#6b7280;text-align:center;line-height:1.4}
 @media (max-width:960px){ .footer-logos img{height:34px} }
