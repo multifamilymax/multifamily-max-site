@@ -23,8 +23,8 @@
 
   <style>
     .footer-logos{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:18px 0 6px}
-    .footer-logos img {display:block;object-fit:contain;height:50px;width:auto}
-    .footer-logos img[alt*="Apartment Cash Flow"] {height:80px;max-width:280px;object-fit:contain;transform:translateY(1px)}
+    .footer-logos img{display:block;object-fit:contain;height:50px;width:auto}
+    .footer-logos img[alt*="Apartment Cash Flow"]{height:80px;max-width:280px;object-fit:contain;transform:translateY(1px)}
     .footer-sep{opacity:.35}
     .compliance{font-size:12px;color:#6b7280;text-align:center;line-height:1.4}
     @media (max-width:960px){ .footer-logos img{height:34px} }
@@ -41,16 +41,16 @@
 
     header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
-    .brand-img { width:180px; height:auto; object-fit:contain; display:block; }
-    .contact .info a { color:#1a73e8; text-decoration:underline; }
-    .contact .info a:hover { color:#0b59c4; }
+    .brand-img{ width:180px; height:auto; object-fit:contain; display:block }
+    .contact .info a{ color:#1a73e8; text-decoration:underline }
+    .contact .info a:hover{ color:#0b59c4 }
     @media (max-width:960px){ .brand-img{ width:130px; height:auto } }
 
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
 
     /* --- HERO --- */
-    .hero{ position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden; }
+    .hero{ position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden }
     .hero::before{
       content:""; position:absolute; inset:0;
       background:url('assets/hero.jpg') center/cover no-repeat;
@@ -60,7 +60,7 @@
       content:""; position:absolute; inset:0;
       background:linear-gradient(180deg, rgba(14,46,80,.08), rgba(14,46,80,.08));
     }
-    .hero-inner{ position:relative; color:#fff; text-align:left; padding:80px 20px; width:100%; }
+    .hero-inner{ position:relative; color:#fff; text-align:left; padding:80px 20px; width:100% }
     .hero h1{
       font-size:46px; line-height:1.1; margin:0 0 10px; color:#fff;
       text-shadow:0 3px 25px rgba(255,255,255,0.7),0 2px 12px rgba(0,0,0,0.4),0 0 4px rgba(255,255,255,0.6);
@@ -74,15 +74,19 @@
     .section-title{ font-size:28px; margin:0 0 12px; color:var(--navy) }
     .section-lead{ color:var(--muted); max-width:760px }
 
-    /* --- MARKETS (new interactive UI) --- */
+    /* --- MARKETS (updated: grid of names + detail panel) --- */
     .markets-ui{ display:grid; gap:14px; }
-    .markets-list-wrap{ border:1px solid #e5e7eb; border-radius:16px; box-shadow:var(--shadow); background:#fff; padding:10px; }
+    .markets-list-wrap{
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      background:#fff;
+      padding:12px;
+    }
     .markets-list{
-      display:flex;
-      gap:8px;
-      overflow:auto;
-      padding:6px;
-      scroll-snap-type:x mandatory;
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap:10px;
     }
     .market-pill{
       border:1px solid #e5e7eb;
@@ -93,13 +97,11 @@
       color:#1f2937;
       cursor:pointer;
       white-space:nowrap;
-      scroll-snap-align:start;
+      overflow:hidden;
+      text-overflow:ellipsis;
       transition: filter .15s ease, background .15s ease, border-color .15s ease, opacity .15s ease;
     }
-    .market-pill:hover{
-      filter: grayscale(1);
-      opacity:.72;
-    }
+    .market-pill:hover{ filter: grayscale(1); opacity:.72; }
     .market-pill[aria-selected="true"]{
       border-color:#cbd5e1;
       background:#f8fafc;
@@ -115,18 +117,26 @@
     }
     .markets-detail-media img{
       width:100%;
-      height:360px;
+      height:420px;
       object-fit:cover;
       border-radius:14px;
       border:1px solid #e5e7eb;
       display:block;
     }
+    .market-kpi{ margin:10px 0 0; padding:0; list-style:none }
+    .market-kpi li{ padding:6px 0; border-bottom:1px solid #eef2f7; font-size:14px }
+    .market-kpi li:last-child{ border-bottom:none }
+    .market-kpi strong{ color:#111827 }
+    .market-section-title{ margin:14px 0 6px; color:var(--navy); font-weight:800; font-size:15px }
 
-    .market-kpi{ margin:10px 0 0; padding:0; list-style:none; }
-    .market-kpi li{ padding:6px 0; border-bottom:1px solid #eef2f7; font-size:14px; }
-    .market-kpi li:last-child{ border-bottom:none; }
-    .market-kpi strong{ color:#111827; }
-    .market-section-title{ margin:14px 0 6px; color:var(--navy); font-weight:800; font-size:15px; }
+    @media (max-width:1100px){
+      .markets-list{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width:960px){
+      .markets-detail-grid{ grid-template-columns:1fr }
+      .markets-detail-media img{ height:240px }
+      .markets-list{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
     .subscribe{ background:#294651; color:#fff }
     .subscribe .section-title{ color:#fff; font-size:34px }
@@ -145,10 +155,10 @@
     .contact{ display:grid; grid-template-columns:1.1fr .9fr; gap:26px }
     .contact .info{ background:var(--light); border-radius:16px; padding:20px }
 
-    .input, .textarea { width:100%; padding:10px 12px; border-radius:10px; outline:none; }
-    .input{ border:1px solid #e5e7eb; background:#fff; }
-    .textarea{ border:1px solid #e5e7eb; background:#fff; }
-    .input--dark, .textarea--dark{ border:1px solid #3a5561; background:#17303a; color:#fff; }
+    .input, .textarea{ width:100%; padding:10px 12px; border-radius:10px; outline:none }
+    .input{ border:1px solid #e5e7eb; background:#fff }
+    .textarea{ border:1px solid #e5e7eb; background:#fff }
+    .input--dark, .textarea--dark{ border:1px solid #3a5561; background:#17303a; color:#fff }
     label.small{ display:block; font-size:12px; margin:0 0 6px }
     .status{ margin-top:10px; font-size:14px }
 
@@ -158,8 +168,6 @@
       .services-grid{ grid-template-columns:1fr 1fr }
       .about,.contact,.subscribe-grid{ grid-template-columns:1fr }
       .hero h1{ font-size:36px }
-      .markets-detail-grid{ grid-template-columns:1fr }
-      .markets-detail-media img{ height:220px }
     }
   </style>
 </head>
@@ -189,11 +197,13 @@
     </div>
   </section>
 
-  <!-- MARKETS (Interactive) -->
+  <!-- MARKETS (Updated to 20 markets + Racine details) -->
   <section id="markets">
     <div class="container">
       <h2 class="section-title">Markets</h2>
-      <p class="section-lead" id="markets-lead">Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.</p>
+      <p class="section-lead" id="markets-lead">
+        Coverage across Milwaukee, Madison, and the strongest secondary markets in Southern Wisconsin.
+      </p>
 
       <div class="markets-ui" style="margin-top:18px">
         <div class="markets-list-wrap">
@@ -203,14 +213,11 @@
         <div class="markets-detail card" style="padding:18px">
           <div class="markets-detail-grid">
             <div class="markets-detail-media">
-              <img id="market-detail-image" src="assets/wi-map.jpg" alt="Wisconsin map" />
+              <img id="market-detail-image" src="assets/market-rk.jpg" alt="Market photo" />
             </div>
 
             <div class="markets-detail-body">
-              <div id="market-detail-content">
-                <h3 style="margin:0 0 6px;color:var(--navy)">Click a market to learn more</h3>
-                <p style="margin:0;color:var(--muted)">Select a market above to view the photo and key indicators.</p>
-              </div>
+              <div id="market-detail-content"></div>
             </div>
           </div>
         </div>
@@ -267,7 +274,7 @@
       <img id="about-photo" src="assets/about.jpg" alt="Max Fiascone" />
       <div>
         <h2 class="section-title" id="about-title">Meet Max Fiascone</h2>
-        <p class="section-lead" id="about-body">Max Fiascone is a dedicated multifamily investment sales and acquisitions specialist, serving the southern Wisconsin region...</p>
+        <p class="section-lead" id="about-body"></p>
         <ul id="about-bullets"></ul>
         <p><a class="cta-btn" href="#contact" id="about-cta">Contact Us</a></p>
       </div>
@@ -336,92 +343,160 @@
   </footer>
 
   <script>
+    // Hardcode your 20 markets (largest first) + 1 example detail (Racine)
+    const MARKETS = [
+      { id:"milwaukee", name:"Milwaukee" },
+      { id:"madison", name:"Madison" },
+      { id:"waukesha", name:"Waukesha" },
+      { id:"brookfield", name:"Brookfield" },
+      { id:"wauwatosa", name:"Wauwatosa" },
+      { id:"west-allis", name:"West Allis" },
+      { id:"new-berlin", name:"New Berlin" },
+      { id:"lake-country", name:"Lake Country (Hartland + Delafield + Pewaukee)" },
+      { id:"oconomowoc", name:"Oconomowoc" },
+      { id:"racine", name:"Racine" },
+      { id:"kenosha", name:"Kenosha" },
+      { id:"mount-pleasant", name:"Mount Pleasant (Foxconn Impact Zone)" },
+      { id:"janesville", name:"Janesville" },
+      { id:"beloit", name:"Beloit" },
+      { id:"green-bay", name:"Green Bay" },
+      { id:"appleton", name:"Appleton" },
+      { id:"oshkosh", name:"Oshkosh" },
+      { id:"fond-du-lac", name:"Fond du Lac" },
+      { id:"sheboygan", name:"Sheboygan" },
+      { id:"manitowoc-two-rivers", name:"Manitowoc / Two Rivers" }
+    ];
+
+    // Only Racine has real content filled in (from your provided text). Others show name-only placeholder.
+    const MARKET_DETAILS = {
+      "racine": {
+        name: "Racine",
+        image: "assets/market-rk.jpg",
+        title: "Friday Submarket Spotlight: Racine, WI",
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,198.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+2.87%" },
+          { label:"Rental Vacancy", value:"5.4% (≈94.6% occupancy)" },
+          { label:"Unemployment", value:"3.7%" },
+          { label:"Population Growth", value:"+1,244 people per year" },
+          { label:"Median Household Income (County)", value:"$75,331" },
+          { label:"Home Value Growth (YoY)", value:"+4.2%" },
+          { label:"Housing Need", value:"900 new units/year (inc. 430 rental units)" },
+          { label:"Employer Momentum", value:"SC Johnson relocating 170 jobs from Chicago by 2026; Uline pursuing a 1,200,000 sq ft expansion; Continued hiring at Amazon + Foxconn" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Vacancy at 5.4% and consistent rent growth show stable demand. Racine needs 900 new units/year, so supply is trailing demand." },
+          { heading:"Expanding Job Base", body:"SC Johnson’s 170-job relocation and expansion in the industrial corridor (Uline, Amazon, Foxconn) fuel steady workforce growth." },
+          { heading:"Location + Lifestyle Advantage", body:"Lakefront living, affordability, and access to Chicago/Milwaukee help attract and retain long-term renters." }
+        ],
+        watch: [
+          "More investor activity is increasing competition",
+          "Growth is steady, not explosive",
+          "Employer concentration requires monitoring"
+        ]
+      }
+    };
+
+    function safeText(v){ return (v === null || v === undefined) ? "" : String(v); }
+
+    function renderDetail(marketId){
+      const detail = MARKET_DETAILS[marketId];
+      const imgEl = document.getElementById('market-detail-image');
+      const contentEl = document.getElementById('market-detail-content');
+
+      if (!detail) {
+        // No data yet: show the photo + a simple “coming soon” without inventing anything
+        imgEl.src = "assets/market-rk.jpg";
+        imgEl.alt = "Market photo";
+
+        const name = (MARKETS.find(x => x.id === marketId)?.name) || "Market";
+        contentEl.innerHTML = `
+          <h3 style="margin:0 0 6px;color:var(--navy)">Friday Submarket Spotlight: ${safeText(name)}, WI</h3>
+          <p style="margin:0;color:var(--muted)">Details coming soon.</p>
+        `;
+        return;
+      }
+
+      imgEl.src = detail.image || "assets/market-rk.jpg";
+      imgEl.alt = detail.name ? (detail.name + " photo") : "Market photo";
+
+      const indicatorsHtml = (detail.indicators || []).length ? `
+        <div class="market-section-title">${safeText(detail.indicatorsTitle || "Key Market Indicators")}</div>
+        <ul class="market-kpi">
+          ${(detail.indicators || []).map(x => `
+            <li><strong>${safeText(x.label)}:</strong> ${safeText(x.value)}</li>
+          `).join("")}
+        </ul>
+      ` : "";
+
+      const whyHtml = (detail.why || []).length ? `
+        <div class="market-section-title">Why Invest Here</div>
+        ${(detail.why || []).map(x => `
+          <p style="margin:0 0 10px;color:#374151"><strong>${safeText(x.heading)}:</strong> ${safeText(x.body)}</p>
+        `).join("")}
+      ` : "";
+
+      const watchHtml = (detail.watch || []).length ? `
+        <div class="market-section-title">What to Watch</div>
+        <ul class="market-kpi">
+          ${(detail.watch || []).map(x => `<li>${safeText(x)}</li>`).join("")}
+        </ul>
+      ` : "";
+
+      contentEl.innerHTML = `
+        <h3 style="margin:0 0 6px;color:var(--navy)">${safeText(detail.title || ("Friday Submarket Spotlight: " + detail.name + ", WI"))}</h3>
+        ${indicatorsHtml}
+        ${whyHtml}
+        ${watchHtml}
+      `;
+    }
+
+    function initMarketsUI(){
+      const listEl = document.getElementById('markets-list');
+      if (!listEl) return;
+
+      listEl.innerHTML = "";
+
+      MARKETS.forEach((m) => {
+        const btn = document.createElement('button');
+        btn.type = "button";
+        btn.className = "market-pill";
+        btn.dataset.id = m.id;
+        btn.setAttribute('role', 'tab');
+        btn.setAttribute('aria-selected', 'false');
+        btn.textContent = m.name;
+
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.market-pill').forEach(b => b.setAttribute('aria-selected','false'));
+          btn.setAttribute('aria-selected','true');
+          renderDetail(m.id);
+        });
+
+        listEl.appendChild(btn);
+      });
+
+      // Start with Racine selected (since we have real data filled in for it)
+      const first = document.querySelector('.market-pill[data-id="racine"]') || document.querySelector('.market-pill');
+      if (first) {
+        first.setAttribute('aria-selected','true');
+        renderDetail(first.dataset.id);
+      }
+    }
+
+    // Keep your existing content/site.json wiring for the rest of the page
     fetch('content/site.json')
       .then(r => r.json())
       .then(data => {
         document.getElementById('hero-title').textContent = data.hero.title;
         document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
 
-        document.getElementById('markets-lead').textContent = data.markets.lead;
+        // Keep this lead editable via site.json if you want
+        document.getElementById('markets-lead').textContent = data.markets.lead || document.getElementById('markets-lead').textContent;
 
-        // --- Markets interactive UI ---
-        const listEl = document.getElementById('markets-list');
-        const detailImg = document.getElementById('market-detail-image');
-        const detailContent = document.getElementById('market-detail-content');
-
-        function safeText(v){ return (v === null || v === undefined) ? '' : String(v); }
-
-        function renderMarketDetail(m){
-          detailImg.src = m.image || 'assets/wi-map.jpg';
-          detailImg.alt = m.name ? (m.name + ' photo') : 'Market photo';
-
-          const title = safeText(m.title || (`Friday Submarket Spotlight: ${m.name}, WI`));
-          const subhead = safeText(m.subhead || '');
-
-          const indicators = (m.indicators && Array.isArray(m.indicators)) ? m.indicators : [];
-          const why = (m.whyInvest && Array.isArray(m.whyInvest)) ? m.whyInvest : [];
-          const watch = (m.watch && Array.isArray(m.watch)) ? m.watch : [];
-
-          const indicatorsHtml = indicators.length
-            ? `<div class="market-section-title">Key Market Indicators</div>
-               <ul class="market-kpi">
-                 ${indicators.map(x => `<li><strong>${safeText(x.label)}:</strong> ${safeText(x.value)}</li>`).join('')}
-               </ul>`
-            : '';
-
-          const whyHtml = why.length
-            ? `<div class="market-section-title">Why Invest Here</div>
-               ${why.map(s => `<p style="margin:0 0 10px;color:#374151">${safeText(s)}</p>`).join('')}`
-            : '';
-
-          const watchHtml = watch.length
-            ? `<div class="market-section-title">What to Watch</div>
-               <ul class="market-kpi">
-                 ${watch.map(x => `<li>${safeText(x)}</li>`).join('')}
-               </ul>`
-            : '';
-
-          detailContent.innerHTML = `
-            <h3 style="margin:0 0 6px;color:var(--navy)">${title}</h3>
-            ${subhead ? `<p style="margin:0;color:var(--muted)">${subhead}</p>` : ``}
-            ${indicatorsHtml}
-            ${whyHtml}
-            ${watchHtml}
-          `;
-        }
-
-        function setActiveMarket(id){
-          const btns = listEl.querySelectorAll('.market-pill');
-          btns.forEach(b => b.setAttribute('aria-selected', b.dataset.id === id ? 'true' : 'false'));
-          const m = (data.markets.items || []).find(x => (x.id || x.name) === id);
-          if (m) renderMarketDetail(m);
-        }
-
-        listEl.innerHTML = '';
-        const markets = (data.markets.items || []);
-
-        markets.forEach((m, idx) => {
-          const key = (m.id || m.name || String(idx));
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'market-pill';
-          btn.dataset.id = key;
-          btn.setAttribute('role', 'tab');
-          btn.setAttribute('aria-selected', 'false');
-          btn.textContent = m.name || 'Market';
-          btn.addEventListener('click', () => setActiveMarket(key));
-          listEl.appendChild(btn);
-        });
-
-        // Default view remains the map + message (no auto-select).
-        // If you want the first market selected by default, uncomment:
-        // if (markets[0]) setActiveMarket(markets[0].id || markets[0].name);
-
-        // Subscribe content
         document.getElementById('sub-title').textContent = data.subscribe.title;
         document.getElementById('sub-lead').textContent = data.subscribe.lead;
 
-        // Services content
         document.getElementById('services-lead').textContent = data.services.lead;
         const sev = document.getElementById('services-grid');
         sev.innerHTML='';
@@ -432,7 +507,6 @@
           sev.appendChild(div);
         });
 
-        // About content
         document.getElementById('about-title').textContent = data.about.title;
         document.getElementById('about-body').innerHTML = data.about.body.replace(/\n\n/g, '<br><br>');
         document.getElementById('about-photo').src = data.about.photo || 'assets/about.jpg';
@@ -449,6 +523,13 @@
           link.innerHTML = '<strong>LinkedIn</strong><br/><a href="'+data.contact.linkedin+'" target="_blank" rel="noopener">View Profile</a>';
           document.querySelector('.contact .info').appendChild(link);
         }
+
+        // Init markets after content loads
+        initMarketsUI();
+      })
+      .catch(() => {
+        // If site.json fails for some reason, still render markets
+        initMarketsUI();
       });
 
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -457,7 +538,6 @@
   <script>
     const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';
     const TOKEN = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';
-
     function wireForm(formId, statusId, kind) {
       const form = document.getElementById(formId);
       if (!form) return;
@@ -503,7 +583,6 @@
         }
       });
     }
-
     wireForm('subscribe-form', 'subscribe-status', 'subscribe');
     wireForm('contact-form', 'contact-status', 'contact');
   </script>
