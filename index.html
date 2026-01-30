@@ -5,47 +5,35 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Multifamily Max | Southern Wisconsin Multifamily</title>
+
   <!-- Social Share / Open Graph -->
-<meta property="og:title" content="Multifamily Max | Southern Wisconsin Multifamily" />
-<meta property="og:description" content="Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets." />
-<meta property="og:image" content="https://multifamily-max.com/assets/social-share.jpg" />
-<meta property="og:url" content="https://multifamily-max.com/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Multifamily Max | Southern Wisconsin Multifamily" />
-<meta name="twitter:description" content="Helping investors buy and sell apartment buildings across Southern Wisconsin." />
-<meta name="twitter:image" content="https://multifamily-max.com/assets/social-share.jpg" />
+  <meta property="og:title" content="Multifamily Max | Southern Wisconsin Multifamily" />
+  <meta property="og:description" content="Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets." />
+  <meta property="og:image" content="https://multifamily-max.com/assets/social-share.jpg" />
+  <meta property="og:url" content="https://multifamily-max.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Multifamily Max | Southern Wisconsin Multifamily" />
+  <meta name="twitter:description" content="Helping investors buy and sell apartment buildings across Southern Wisconsin." />
+  <meta name="twitter:image" content="https://multifamily-max.com/assets/social-share.jpg" />
 
   <meta name="description" content="Helping investors buy and sell apartment buildings across Milwaukee, Madison, and surrounding markets." />
   <meta name="theme-color" content="#0E2E50" />
   <link rel="icon" href="assets/favicon.ico" />
+
   <style>
     .footer-logos{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:18px 0 6px}
-.footer-logos img {
-  display: block;
-  object-fit: contain;
-  height: 50px; /* height for Multifamily Max logo */
-  width: auto;
-}
-
-.footer-logos img[alt*="Apartment Cash Flow"] {
-  height: 80px;          /* slightly taller for balance */
-  max-width: 280px;      /* lets it stretch a bit wider */
-  object-fit: contain;
-  transform: translateY(1px); /* minor vertical alignment if needed */
-}
-
-
-
-.footer-sep{opacity:.35}
-.compliance{font-size:12px;color:#6b7280;text-align:center;line-height:1.4}
-@media (max-width:960px){ .footer-logos img{height:34px} }
+    .footer-logos img {display:block;object-fit:contain;height:50px;width:auto}
+    .footer-logos img[alt*="Apartment Cash Flow"] {height:80px;max-width:280px;object-fit:contain;transform:translateY(1px)}
+    .footer-sep{opacity:.35}
+    .compliance{font-size:12px;color:#6b7280;text-align:center;line-height:1.4}
+    @media (max-width:960px){ .footer-logos img{height:34px} }
 
     :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
-    *{ box-sizing:border-box } html{ scroll-behavior:smooth }
-    /* Offset anchor scrolling for sticky header (fallback; JS will override exactly) */
-html{ scroll-padding-top: 90px }
-section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
+    *{ box-sizing:border-box }
+    html{ scroll-behavior:smooth }
+    html{ scroll-padding-top: 90px }
+    section{ scroll-margin-top: 90px }
 
     body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--dark); background:#fff }
     a{ color:inherit; text-decoration:none }
@@ -53,93 +41,92 @@ section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
 
     header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
-    .brand-img {
-  width: 180px; /* half the original */
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-.contact .info a {
-  color: #1a73e8; /* standard LinkedIn blue tone */
-  text-decoration: underline;
-}
-.contact .info a:hover {
-  color: #0b59c4; /* slightly darker on hover */
-}
-
-@media (max-width: 960px) {
-  .brand-img {
-    width: 130px; /* smaller on mobile too */
-    height: auto;
-  }
-}
-
+    .brand-img { width:180px; height:auto; object-fit:contain; display:block; }
+    .contact .info a { color:#1a73e8; text-decoration:underline; }
+    .contact .info a:hover { color:#0b59c4; }
+    @media (max-width:960px){ .brand-img{ width:130px; height:auto } }
 
     .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
     .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
 
     /* --- HERO --- */
-    .hero{ 
-  position:relative; 
-  min-height:64vh; 
-  display:grid; 
-  place-items:center; 
-  overflow:hidden; 
-}
-
-.hero::before{
-  content:""; 
-  position:absolute; 
-  inset:0;
-  background:url('assets/hero.jpg') center/cover no-repeat;
-  filter:brightness(1) contrast(1.05) saturate(1.05);
-}
-
-.hero::after{
-  content:""; 
-  position:absolute; 
-  inset:0;
-  background:linear-gradient(180deg, rgba(14,46,80,.08), rgba(14,46,80,.08)); /* reduced overlay tint */
-}
-
-.hero-inner{ 
-  position:relative; 
-  color:#fff; 
-  text-align:left; 
-  padding:80px 20px; 
-  width:100%; 
-}
-
-.hero h1{
-  font-size:46px; 
-  line-height:1.1; 
-  margin:0 0 10px;
-  color:#ffffff;
-  text-shadow:
-    0 3px 25px rgba(255,255,255,0.7),
-    0 2px 12px rgba(0,0,0,0.4),
-    0 0 4px rgba(255,255,255,0.6);
-}
-
-.hero p{
-  font-size:19px; 
-  margin:0; 
-  color:#f9fafb;
-  text-shadow:
-    0 2px 18px rgba(255,255,255,0.6),
-    0 1px 12px rgba(0,0,0,0.4);
-}
+    .hero{ position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden; }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:url('assets/hero.jpg') center/cover no-repeat;
+      filter:brightness(1) contrast(1.05) saturate(1.05);
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(14,46,80,.08), rgba(14,46,80,.08));
+    }
+    .hero-inner{ position:relative; color:#fff; text-align:left; padding:80px 20px; width:100%; }
+    .hero h1{
+      font-size:46px; line-height:1.1; margin:0 0 10px; color:#fff;
+      text-shadow:0 3px 25px rgba(255,255,255,0.7),0 2px 12px rgba(0,0,0,0.4),0 0 4px rgba(255,255,255,0.6);
+    }
+    .hero p{
+      font-size:19px; margin:0; color:#f9fafb;
+      text-shadow:0 2px 18px rgba(255,255,255,0.6),0 1px 12px rgba(0,0,0,0.4);
+    }
 
     section{ padding:64px 0 }
     .section-title{ font-size:28px; margin:0 0 12px; color:var(--navy) }
     .section-lead{ color:var(--muted); max-width:760px }
 
-    .market-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-    .market-card{ border-radius:16px; overflow:hidden; box-shadow:var(--shadow); border:1px solid #e5e7eb; background:#fff }
-    .market-card img{ width:100%; height:160px; object-fit:cover; display:block }
-    .market-card .mc-body{ padding:16px }
-    .market-card h4{ margin:0 0 6px; color:var(--navy) }
-    .market-card p{ margin:0; color:#374151; font-size:14px }
+    /* --- MARKETS (new interactive UI) --- */
+    .markets-ui{ display:grid; gap:14px; }
+    .markets-list-wrap{ border:1px solid #e5e7eb; border-radius:16px; box-shadow:var(--shadow); background:#fff; padding:10px; }
+    .markets-list{
+      display:flex;
+      gap:8px;
+      overflow:auto;
+      padding:6px;
+      scroll-snap-type:x mandatory;
+    }
+    .market-pill{
+      border:1px solid #e5e7eb;
+      background:#fff;
+      border-radius:999px;
+      padding:10px 12px;
+      font-weight:700;
+      color:#1f2937;
+      cursor:pointer;
+      white-space:nowrap;
+      scroll-snap-align:start;
+      transition: filter .15s ease, background .15s ease, border-color .15s ease, opacity .15s ease;
+    }
+    .market-pill:hover{
+      filter: grayscale(1);
+      opacity:.72;
+    }
+    .market-pill[aria-selected="true"]{
+      border-color:#cbd5e1;
+      background:#f8fafc;
+      opacity:1;
+      filter:none;
+    }
+
+    .markets-detail-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .markets-detail-media img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid #e5e7eb;
+      display:block;
+    }
+
+    .market-kpi{ margin:10px 0 0; padding:0; list-style:none; }
+    .market-kpi li{ padding:6px 0; border-bottom:1px solid #eef2f7; font-size:14px; }
+    .market-kpi li:last-child{ border-bottom:none; }
+    .market-kpi strong{ color:#111827; }
+    .market-section-title{ margin:14px 0 6px; color:var(--navy); font-weight:800; font-size:15px; }
 
     .subscribe{ background:#294651; color:#fff }
     .subscribe .section-title{ color:#fff; font-size:34px }
@@ -158,26 +145,25 @@ section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
     .contact{ display:grid; grid-template-columns:1.1fr .9fr; gap:26px }
     .contact .info{ background:var(--light); border-radius:16px; padding:20px }
 
-    .input, .textarea {
-      width:100%; padding:10px 12px; border-radius:10px; outline:none;
-    }
+    .input, .textarea { width:100%; padding:10px 12px; border-radius:10px; outline:none; }
     .input{ border:1px solid #e5e7eb; background:#fff; }
     .textarea{ border:1px solid #e5e7eb; background:#fff; }
-    .input--dark, .textarea--dark{
-      border:1px solid #3a5561; background:#17303a; color:#fff;
-    }
+    .input--dark, .textarea--dark{ border:1px solid #3a5561; background:#17303a; color:#fff; }
     label.small{ display:block; font-size:12px; margin:0 0 6px }
     .status{ margin-top:10px; font-size:14px }
 
     footer{ padding:26px 0; border-top:1px solid #e5e7eb; color:#6b7280 }
 
     @media (max-width:960px){
-      .market-grid,.services-grid{ grid-template-columns:1fr 1fr }
+      .services-grid{ grid-template-columns:1fr 1fr }
       .about,.contact,.subscribe-grid{ grid-template-columns:1fr }
       .hero h1{ font-size:36px }
+      .markets-detail-grid{ grid-template-columns:1fr }
+      .markets-detail-media img{ height:220px }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -203,11 +189,33 @@ section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
     </div>
   </section>
 
+  <!-- MARKETS (Interactive) -->
   <section id="markets">
     <div class="container">
       <h2 class="section-title">Markets</h2>
       <p class="section-lead" id="markets-lead">Coverage from Milwaukee to Madison, plus Racine, Kenosha, Waukesha, Rock, Brown, and nearby counties.</p>
-      <div class="market-grid" id="market-grid" style="margin-top:18px"></div>
+
+      <div class="markets-ui" style="margin-top:18px">
+        <div class="markets-list-wrap">
+          <div class="markets-list" id="markets-list" role="tablist" aria-label="Markets"></div>
+        </div>
+
+        <div class="markets-detail card" style="padding:18px">
+          <div class="markets-detail-grid">
+            <div class="markets-detail-media">
+              <img id="market-detail-image" src="assets/wi-map.jpg" alt="Wisconsin map" />
+            </div>
+
+            <div class="markets-detail-body">
+              <div id="market-detail-content">
+                <h3 style="margin:0 0 6px;color:var(--navy)">Click a market to learn more</h3>
+                <p style="margin:0;color:var(--muted)">Select a market above to view the photo and key indicators.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -259,11 +267,7 @@ section{ scroll-margin-top: 90px } /* extra safety for programmatic scrolls */
       <img id="about-photo" src="assets/about.jpg" alt="Max Fiascone" />
       <div>
         <h2 class="section-title" id="about-title">Meet Max Fiascone</h2>
-        <p class="section-lead" id="about-body">Max Fiascone is a dedicated multifamily investment sales and acquisitions specialist, serving the southern Wisconsin region. With a background in both sales and engineering, he approaches every transaction with a problem-solving mindset, ensuring that property owners and investors receive strategic insights tailored to their specific goals. His deep market expertise and asset specialization allow him to provide top-tier analytics, data-driven strategies, and a comprehensive understanding of local and regional trends, helping clients maximize their investments.
-
-Max takes pride in fostering long-term relationships by offering hands-on guidance throughout the entire investment lifecycle. Whether advising first-time investors or seasoned portfolio owners, he is committed to delivering results-driven solutions that align with their financial objectives.
-
-Beyond real estate, Max and his wife are avid food enthusiasts. They are always on the hunt for the best new restaurants in the area. Max also enjoys an active lifestyle, spending his free time hiking, camping, running, and working out.</p>
+        <p class="section-lead" id="about-body">Max Fiascone is a dedicated multifamily investment sales and acquisitions specialist, serving the southern Wisconsin region...</p>
         <ul id="about-bullets"></ul>
         <p><a class="cta-btn" href="#contact" id="about-cta">Contact Us</a></p>
       </div>
@@ -314,24 +318,21 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
   </section>
 
   <footer>
-    <footer>
-  <div class="container">
-    <div class="footer-logos" role="group" aria-label="Brand affiliations">
-      <img src="assets/logo.png" alt="Multifamily Max logo">
-      <span class="footer-sep" aria-hidden="true">|</span>
-      <img src="assets/apartment-cash-flow-logo.png" alt="Apartment Cash Flow logo">
-    </div>
+    <div class="container">
+      <div class="footer-logos" role="group" aria-label="Brand affiliations">
+        <img src="assets/logo.png" alt="Multifamily Max logo">
+        <span class="footer-sep" aria-hidden="true">|</span>
+        <img src="assets/apartment-cash-flow-logo.png" alt="Apartment Cash Flow logo">
+      </div>
 
-    <div class="compliance">
-      Licensed through <strong>Apartment Cash Flow, Inc.</strong> (Sponsoring Broker).<br>
-    </div>
+      <div class="compliance">
+        Licensed through <strong>Apartment Cash Flow, Inc.</strong> (Sponsoring Broker).<br>
+      </div>
 
-    <div style="text-align:center;margin-top:12px">
-      © <span id="y"></span> Multifamily Max. All rights reserved.
+      <div style="text-align:center;margin-top:12px">
+        © <span id="y"></span> Multifamily Max. All rights reserved.
+      </div>
     </div>
-  </div>
-</footer>
-
   </footer>
 
   <script>
@@ -340,18 +341,87 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
       .then(data => {
         document.getElementById('hero-title').textContent = data.hero.title;
         document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
+
         document.getElementById('markets-lead').textContent = data.markets.lead;
-        const mg = document.getElementById('market-grid');
-        mg.innerHTML = '';
-        (data.markets.items || []).forEach(m => {
-          const card = document.createElement('div');
-          card.className = 'market-card';
-          card.innerHTML = '<img src="'+(m.image||'assets/market.jpg')+'" alt="'+m.name+'" />'
-                         + '<div class="mc-body"><h4>'+m.name+'</h4><p>'+m.blurb+'</p></div>';
-          mg.appendChild(card);
+
+        // --- Markets interactive UI ---
+        const listEl = document.getElementById('markets-list');
+        const detailImg = document.getElementById('market-detail-image');
+        const detailContent = document.getElementById('market-detail-content');
+
+        function safeText(v){ return (v === null || v === undefined) ? '' : String(v); }
+
+        function renderMarketDetail(m){
+          detailImg.src = m.image || 'assets/wi-map.jpg';
+          detailImg.alt = m.name ? (m.name + ' photo') : 'Market photo';
+
+          const title = safeText(m.title || (`Friday Submarket Spotlight: ${m.name}, WI`));
+          const subhead = safeText(m.subhead || '');
+
+          const indicators = (m.indicators && Array.isArray(m.indicators)) ? m.indicators : [];
+          const why = (m.whyInvest && Array.isArray(m.whyInvest)) ? m.whyInvest : [];
+          const watch = (m.watch && Array.isArray(m.watch)) ? m.watch : [];
+
+          const indicatorsHtml = indicators.length
+            ? `<div class="market-section-title">Key Market Indicators</div>
+               <ul class="market-kpi">
+                 ${indicators.map(x => `<li><strong>${safeText(x.label)}:</strong> ${safeText(x.value)}</li>`).join('')}
+               </ul>`
+            : '';
+
+          const whyHtml = why.length
+            ? `<div class="market-section-title">Why Invest Here</div>
+               ${why.map(s => `<p style="margin:0 0 10px;color:#374151">${safeText(s)}</p>`).join('')}`
+            : '';
+
+          const watchHtml = watch.length
+            ? `<div class="market-section-title">What to Watch</div>
+               <ul class="market-kpi">
+                 ${watch.map(x => `<li>${safeText(x)}</li>`).join('')}
+               </ul>`
+            : '';
+
+          detailContent.innerHTML = `
+            <h3 style="margin:0 0 6px;color:var(--navy)">${title}</h3>
+            ${subhead ? `<p style="margin:0;color:var(--muted)">${subhead}</p>` : ``}
+            ${indicatorsHtml}
+            ${whyHtml}
+            ${watchHtml}
+          `;
+        }
+
+        function setActiveMarket(id){
+          const btns = listEl.querySelectorAll('.market-pill');
+          btns.forEach(b => b.setAttribute('aria-selected', b.dataset.id === id ? 'true' : 'false'));
+          const m = (data.markets.items || []).find(x => (x.id || x.name) === id);
+          if (m) renderMarketDetail(m);
+        }
+
+        listEl.innerHTML = '';
+        const markets = (data.markets.items || []);
+
+        markets.forEach((m, idx) => {
+          const key = (m.id || m.name || String(idx));
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'market-pill';
+          btn.dataset.id = key;
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', 'false');
+          btn.textContent = m.name || 'Market';
+          btn.addEventListener('click', () => setActiveMarket(key));
+          listEl.appendChild(btn);
         });
+
+        // Default view remains the map + message (no auto-select).
+        // If you want the first market selected by default, uncomment:
+        // if (markets[0]) setActiveMarket(markets[0].id || markets[0].name);
+
+        // Subscribe content
         document.getElementById('sub-title').textContent = data.subscribe.title;
         document.getElementById('sub-lead').textContent = data.subscribe.lead;
+
+        // Services content
         document.getElementById('services-lead').textContent = data.services.lead;
         const sev = document.getElementById('services-grid');
         sev.innerHTML='';
@@ -361,6 +431,8 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
           div.innerHTML = '<div class="num">'+String(i+1).padStart(2,'0')+'</div><h3>'+it.title+'</h3><p>'+it.body+'</p>';
           sev.appendChild(div);
         });
+
+        // About content
         document.getElementById('about-title').textContent = data.about.title;
         document.getElementById('about-body').innerHTML = data.about.body.replace(/\n\n/g, '<br><br>');
         document.getElementById('about-photo').src = data.about.photo || 'assets/about.jpg';
@@ -371,20 +443,22 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
         });
         document.getElementById('about-cta').textContent = data.about.cta.label;
         document.getElementById('about-cta').href = data.about.cta.href || '#contact';
-        if (data.contact.linkedin) {
-  const link = document.createElement('p');
-  link.innerHTML = '<strong>LinkedIn</strong><br/><a href="'+data.contact.linkedin+'" target="_blank" rel="noopener">View Profile</a>';
-  document.querySelector('.contact .info').appendChild(link);
-}
 
+        if (data.contact.linkedin) {
+          const link = document.createElement('p');
+          link.innerHTML = '<strong>LinkedIn</strong><br/><a href="'+data.contact.linkedin+'" target="_blank" rel="noopener">View Profile</a>';
+          document.querySelector('.contact .info').appendChild(link);
+        }
       });
+
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 
   <script>
     const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';
     const TOKEN = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';
-   function wireForm(formId, statusId, kind) {
+
+    function wireForm(formId, statusId, kind) {
       const form = document.getElementById(formId);
       if (!form) return;
       const status = document.getElementById(statusId);
@@ -403,16 +477,16 @@ Beyond real estate, Max and his wife are avid food enthusiasts. They are always 
         status.textContent = 'Sending…';
 
         try {
-         const params = new URLSearchParams(data); // encodes as key=value&...
-const res = await fetch(FORMS_API, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-  body: params.toString()
-});
-const txt = await res.text();
-let json = {};
-try { json = JSON.parse(txt); } catch (_) {}
+          const params = new URLSearchParams(data);
+          const res = await fetch(FORMS_API, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+            body: params.toString()
+          });
 
+          const txt = await res.text();
+          let json = {};
+          try { json = JSON.parse(txt); } catch (_) {}
 
           if (res.ok && json.ok) {
             status.textContent = (kind === 'subscribe')
@@ -433,22 +507,23 @@ try { json = JSON.parse(txt); } catch (_) {}
     wireForm('subscribe-form', 'subscribe-status', 'subscribe');
     wireForm('contact-form', 'contact-status', 'contact');
   </script>
+
   <script>
-  // Dynamically match scroll padding to current header height
-  function setScrollPadding(){
-    const header = document.querySelector('header');
-    if(!header) return;
-    const h = header.offsetHeight;
-    document.documentElement.style.scrollPaddingTop = h + 'px';
-    // Also help any scrollIntoView calls land cleanly
-    document.querySelectorAll('section').forEach(s => { s.style.scrollMarginTop = h + 'px'; });
-  }
-  // Run on load and on resize (debounced)
-  let _t; 
-  window.addEventListener('resize', () => { clearTimeout(_t); _t = setTimeout(setScrollPadding, 100); });
-  window.addEventListener('load', setScrollPadding);
-  setScrollPadding();
-</script>
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/244135941.js"></script>
-<!-- End of HubSpot Embed Code -->
+    function setScrollPadding(){
+      const header = document.querySelector('header');
+      if(!header) return;
+      const h = header.offsetHeight;
+      document.documentElement.style.scrollPaddingTop = h + 'px';
+      document.querySelectorAll('section').forEach(s => { s.style.scrollMarginTop = h + 'px'; });
+    }
+    let _t;
+    window.addEventListener('resize', () => { clearTimeout(_t); _t = setTimeout(setScrollPadding, 100); });
+    window.addEventListener('load', setScrollPadding);
+    setScrollPadding();
+  </script>
+
+  <!-- Start of HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/244135941.js"></script>
+  <!-- End of HubSpot Embed Code -->
+</body>
+</html>
