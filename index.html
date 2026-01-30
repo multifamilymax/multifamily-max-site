@@ -74,8 +74,8 @@
     .section-title{ font-size:28px; margin:0 0 12px; color:var(--navy) }
     .section-lead{ color:var(--muted); max-width:760px }
 
-    /* --- MARKETS (updated: grid of names + detail panel) --- */
-    .markets-ui{ display:grid; gap:14px; }
+    /* --- MARKETS (grid of names + detail panel) --- */
+    .markets-ui{ display:grid; gap:14px }
     .markets-list-wrap{
       border:1px solid #e5e7eb;
       border-radius:16px;
@@ -197,7 +197,7 @@
     </div>
   </section>
 
-  <!-- MARKETS (Updated to 20 markets + Racine details) -->
+  <!-- MARKETS -->
   <section id="markets">
     <div class="container">
       <h2 class="section-title">Markets</h2>
@@ -213,7 +213,7 @@
         <div class="markets-detail card" style="padding:18px">
           <div class="markets-detail-grid">
             <div class="markets-detail-media">
-              <img id="market-detail-image" src="assets/market-rk.jpg" alt="Market photo" />
+              <img id="market-detail-image" src="assets/market_waukesha.jpg" alt="Market photo" />
             </div>
 
             <div class="markets-detail-body">
@@ -343,7 +343,18 @@
   </footer>
 
   <script>
-    // Hardcode your 20 markets (largest first) + 1 example detail (Racine)
+    // ========= MARKETS =========
+    // Image convention:
+    // assets/market_<marketId>.jpg
+    // Examples:
+    // assets/market_waukesha.jpg
+    // assets/market_lake-country.jpg
+    // assets/market_manitowoc-two-rivers.jpg
+    function marketImageFor(marketId){
+      return 'assets/market_' + marketId + '.jpg';
+    }
+
+    // 20 markets (largest first)
     const MARKETS = [
       { id:"milwaukee", name:"Milwaukee" },
       { id:"madison", name:"Madison" },
@@ -367,12 +378,9 @@
       { id:"manitowoc-two-rivers", name:"Manitowoc / Two Rivers" }
     ];
 
-    // Only Racine has real content filled in (from your provided text). Others show name-only placeholder.
+    // Details provided by you (no invented stats)
     const MARKET_DETAILS = {
       "racine": {
-        name: "Racine",
-        image: "assets/market-rk.jpg",
-        title: "Friday Submarket Spotlight: Racine, WI",
         indicatorsTitle: "Key Market Indicators (Late 2025)",
         indicators: [
           { label:"Average Rent", value:"$1,198.00 per month" },
@@ -387,7 +395,7 @@
         ],
         why: [
           { heading:"Strong Demand + Limited Supply", body:"Vacancy at 5.4% and consistent rent growth show stable demand. Racine needs 900 new units/year, so supply is trailing demand." },
-          { heading:"Expanding Job Base", body:"SC Johnson’s 170-job relocation and expansion in the industrial corridor (Uline, Amazon, Foxconn) fuel steady workforce growth." },
+          { heading:"Expanding Job Base", body:"SC Johnson’s 170-job relocation + expansion in the industrial corridor (Uline, Amazon, Foxconn) fuel steady workforce growth." },
           { heading:"Location + Lifestyle Advantage", body:"Lakefront living, affordability, and access to Chicago/Milwaukee help attract and retain long-term renters." }
         ],
         watch: [
@@ -395,31 +403,299 @@
           "Growth is steady, not explosive",
           "Employer concentration requires monitoring"
         ]
+      },
+
+      "kenosha": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,425.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+3.2%" },
+          { label:"Rental Vacancy", value:"5.1% (≈94.9% occupancy)" },
+          { label:"Unemployment", value:"3.4%" },
+          { label:"Population Growth", value:"+887 people per year" },
+          { label:"Median Household Income (County)", value:"$79,412" },
+          { label:"Home Value Growth (YoY)", value:"+5.3%" },
+          { label:"Employer Momentum", value:"Microsoft acquired roughly 240 acres near I 94 and Highway 142 for a multi building data center campus; Uline added a 1,440,000 sqft warehouse (largest in WI) and has a proposed 1,200,000 sqft distribution center under review; Continued industrial and logistics buildout along the I 94 corridor, including a 175,000 sqft manufacturing and warehouse project and ongoing hiring from Amazon, Haribo, and other corridor employers" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Kenosha rents average about $1,425 per month with year over year growth just above three percent. Vacancy of 5.1 percent indicates tight conditions and stable absorption. County reports and housing task force updates note significant underproduction of new housing, which supports continued rent strength." },
+          { heading:"Expanding Job Base", body:"The I 94 corridor continues to attract large scale investment. Microsoft’s land acquisition, Uline’s multi site expansion, and ongoing industrial hiring provide consistent demand for workforce housing." },
+          { heading:"Location + Lifestyle Advantage", body:"Kenosha benefits from a strong commuter position between Chicago and Milwaukee, access to Lake Michigan, and improving retail and employment clusters. Renters are drawn to the combination of affordability and proximity to major employers." }
+        ],
+        watch: [
+          "Growth is steady but tied closely to the industrial and logistics cycle",
+          "Employer concentration in distribution and manufacturing requires monitoring",
+          "Construction timelines and costs can slow new housing supply",
+          "Investor activity is growing as yield seekers look outside larger metros"
+        ]
+      },
+
+      "waukesha": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,424.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+4.61%" },
+          { label:"Rental Vacancy", value:"3.2% (≈96.8% occupancy)" },
+          { label:"Unemployment", value:"3.4%" },
+          { label:"Population Growth", value:"+1,750 people per year" },
+          { label:"Median Household Income (County)", value:"$104,100" },
+          { label:"Home Value Growth (YoY)", value:"+4.2%" },
+          { label:"Housing Need", value:"144.9 new units/year" },
+          { label:"Employer Momentum", value:"Milwaukee Tool investing $42M in Menomonee Falls, adding 300 jobs; GE HealthCare investing $100M into its Waukesha County campus; Downtown Waukesha approved for 219 new market rate units (Mandel Group Delafield St project)" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Vacancy around 3.2% keeps the market tight, and rents are still climbing. Even with new projects in the pipeline, supply has not caught up to demand." },
+          { heading:"Expanding Job Base", body:"Major reinvestment from GE HealthCare and Milwaukee Tool adds durable, high quality employment that supports long term renter demand across the county." },
+          { heading:"Location + Lifestyle Advantage", body:"Waukesha offers Lake Country quality of life, strong schools, and quick access to Milwaukee while staying more affordable than core metro submarkets." }
+        ],
+        watch: [
+          "Rent growth is solid but more steady than explosive",
+          "Keep an eye on reliance on a few large employers",
+          "New construction is rising, but still limited",
+          "Suburban pricing is getting competitive as more capital targets Waukesha County"
+        ]
+      },
+
+      "brookfield": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,880.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+2.40%" },
+          { label:"Rental Vacancy", value:"2.10% (≈97.90% occupancy)" },
+          { label:"Unemployment", value:"3.30%" },
+          { label:"Population Growth", value:"+250 people per year" },
+          { label:"Median Household Income (County)", value:"$104,100" },
+          { label:"Home Value Growth (YoY)", value:"+5.20%" },
+          { label:"Employer Momentum", value:"Milwaukee Tool headquartered in Brookfield with thousands of metro employees; The Corners of Brookfield planning a $167 million expansion with 278 luxury apartments and new retail; Brookfield Square’s former Boston Store site being repositioned into a public market and new housing, including “The Flats” affordable apartments" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Average rents near $1,900 and rent growth of about 2.4% year over year, combined with a rental vacancy rate just above 2%, signal a tight, stable Class A and B suburban market where quality units lease quickly and occupancy stays high." },
+          { heading:"Expanding Job Base", body:"Milwaukee Tool’s headquarters presence, GE HealthCare’s continued investment in nearby Waukesha County, and ongoing retail and mixed-use investment around The Corners and Brookfield Square provide durable employment and support long term renter demand at higher income levels." },
+          { heading:"Location + Lifestyle Advantage", body:"Brookfield offers a high income suburban lifestyle with strong schools, retail corridors like Bluemound Road and The Corners, and quick access to both downtown Milwaukee and Lake Country, making it a preferred home base for professionals who still want Metro Milwaukee access." }
+        ],
+        watch: [
+          "Brookfield is a high income suburban market where most multifamily stock consists of large, professionally managed communities rather than small mom and pop buildings",
+          "Only two Brookfield multifamily assets have traded this year (a 6 unit and a 29 unit) highlighting how limited inventory is in this submarket",
+          "Investor interest remains high due to strong schools, premium household incomes, and consistently high occupancy across the area",
+          "Competition is fierce when a quality asset comes up for sale and pricing often sits at the upper end of Milwaukee suburban ranges"
+        ]
+      },
+
+      "new-berlin": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,657.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+4.75%" },
+          { label:"Rental Vacancy", value:"1.8% (≈98.2% occupancy)" },
+          { label:"Unemployment", value:"3.0%" },
+          { label:"Population Growth", value:"+77 people per year (long-term 2000–2023 average)" },
+          { label:"Median Household Income (County)", value:"$104,100" },
+          { label:"Home Value Growth (YoY)", value:"+3.10%" },
+          { label:"Employer Momentum", value:"ABB investing nearly $100M in a new advanced manufacturing facility in New Berlin Industrial Park; 1,100+ acre industrial park with hundreds of firms and roughly tens of thousands of jobs in advanced manufacturing and engineering; Ongoing industrial and logistics expansion across Waukesha County along the I-43 and I-94 corridors" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Tight, higher-income renter pool with enough rent growth to support cash flow. Most housing is owner-occupied single-family, so true multifamily inventory is structurally constrained." },
+          { heading:"Expanding Job Base", body:"New Berlin is one of Waukesha County’s key employment hubs, with ABB’s new facility reinforcing an already deep base of advanced manufacturing, engineering, and industrial employers. Low county unemployment near 3.0% underpins steady renter demand." },
+          { heading:"Location + Lifestyle Advantage", body:"Investors tap into high-income suburban households, top-rated schools, and a low municipal tax environment, while still being minutes from Milwaukee and the broader Lake Country corridor. For renters, it offers “move-up suburb” living with strong amenities and short commutes." }
+        ],
+        watch: [
+          "Population growth is modest and recently flat, so rent growth will rely more on incomes and product quality than raw in-migration",
+          "Heavy reliance on advanced manufacturing and industrial employers creates some sector concentration risk",
+          "Limited available land and community expectations can slow down new multifamily approvals and push construction costs higher",
+          "Scarce multifamily inventory and high incomes support strong pricing, so value-add buyers need to underwrite carefully to avoid overpaying"
+        ]
+      },
+
+      "janesville": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,161.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+9.00%" },
+          { label:"Rental Vacancy", value:"4.1% (≈95.9% occupancy)" },
+          { label:"Unemployment (Rock County)", value:"2.9%" },
+          { label:"Population Growth (County)", value:"+1,018 people per year" },
+          { label:"Median Household Income (County)", value:"$74,390" },
+          { label:"Home Value Growth (YoY)", value:"+6.5%" },
+          { label:"Employer Momentum", value:"Redevelopment momentum at the former GM site, including proposals for a large data center campus; Impact Confections announced a $12M expansion tied to modernization and continued operations in Janesville; SHINE Technologies is scaling production locally, supported by $32M in federal funding to complete its Mo-99 facility" }
+        ],
+        why: [
+          { heading:"Lower Barrier to Entry", body:"Janesville offers meaningfully lower pricing and entry points compared to larger Wisconsin metros. This creates accessibility for smaller and mid-sized investors looking for yield, value-add opportunities, or a first step into larger unit counts." },
+          { heading:"Strong Demand + Limited Supply", body:"Rents are up sharply year over year while vacancy remains tight. Even as a smaller market, current fundamentals support stable leasing and durable cash flow." },
+          { heading:"Expanding Job Base", body:"Investment tied to the former GM site, SHINE Technologies, and local manufacturing continues to reinforce employment demand and household formation across the area." }
+        ],
+        watch: [
+          "Most apartment inventory consists of older buildings, creating value-add upside but requiring careful underwriting around deferred maintenance",
+          "Deal flow can be thin, so quality opportunities may be infrequent and competitive",
+          "Market performance can be more sensitive to a handful of large projects or employer decisions than in larger, more diversified metros"
+        ]
+      },
+
+      "beloit": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,224.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+8.80%" },
+          { label:"Unemployment (Rock County)", value:"2.90%" },
+          { label:"Population Growth (City)", value:"-88 people per year" },
+          { label:"Median Household Income (County)", value:"$74,390" },
+          { label:"Home Value Growth (YoY)", value:"+7.00%" },
+          { label:"Employer Momentum", value:"Ho-Chunk casino resort under construction, projected 1,500+ permanent jobs and 3,000 construction jobs; target opening in 2026; Downtown Beloit adding new apartment inventory via major mixed use redevelopment projects; ABC Supply continuing investment in its Beloit HQ campus" }
+        ],
+        why: [
+          { heading:"Stateline Pricing Advantage", body:"Beloit benefits from its proximity to Northern Illinois, capturing renter demand priced out of Illinois markets while maintaining Wisconsin operating costs. This stateline dynamic supports steady absorption and long-term demand without relying on a single employer." },
+          { heading:"Redevelopment-Driven Momentum", body:"Downtown Beloit has seen meaningful reinvestment through mixed-use projects, institutional capital, and the Ho-Chunk development. This creates neighborhood-level uplift and incremental rent growth rather than a single project-driven spike." },
+          { heading:"Yield Still Available", body:"Compared to larger Wisconsin metros, Beloit continues to offer attractive entry pricing and yield opportunities, particularly for investors focused on stabilized cash flow with moderate upside rather than heavy repositioning." }
+        ],
+        watch: [
+          "Many assets are legacy properties, but newer downtown projects can create a widening gap between renovated and unrenovated stock",
+          "Recent rent growth has been strong, but long-term performance tends to be steadier and more yield-oriented than growth-driven",
+          "As redevelopment progresses, investor interest is increasing, which may compress yields on the best-located assets"
+        ]
+      },
+
+      "oconomowoc": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,842.00 per month" },
+          { label:"Rent Growth (YoY)", value:"-3.90%" },
+          { label:"Rental Vacancy", value:"5.00% (95% occupancy)" },
+          { label:"Unemployment", value:"2.50%" },
+          { label:"Population Growth", value:"+207 people per year" },
+          { label:"Median Household Income (County)", value:"$92,125" },
+          { label:"Home Value Growth (YoY)", value:"+5.30%" },
+          { label:"Employer Momentum", value:"Pabst Farms: 226,321 SF Class A spec industrial warehouse broke ground (targeting late-2025 delivery); Costco filed an application for a Pabst Farms location (city announcement); Pabst Farms 210-acre mixed-use plan announced; New apartment supply is meaningful: ~1,244 apartment units shown across major projects on the City development map" }
+        ],
+        why: [
+          { heading:"Location + Lifestyle Advantage", body:"Oconomowoc is one of the high-demand suburbs west of Milwaukee where renters are choosing lake access and suburban quality of life, while staying close enough to Milwaukee to be in the action. This “city to suburbs” movement across the county is a real tailwind here." },
+          { heading:"Strong Demand + Limited Supply", body:"Even with recent rent softening, vacancy around 5% implies a tight rental market and steady absorption." },
+          { heading:"Expanding Job Base", body:"Pabst Farms continues to attract large-scale commercial and industrial investment, which supports local employment and renter demand." }
+        ],
+        watch: [
+          "Supply pipeline: a large wave of new Class A units hit the market, which is pressuring top-of-market rents first",
+          "Competitive buyer pool: this is a highly desired Waukesha County submarket, so pricing can get aggressive",
+          "Deal flow can be thin: fewer trades, fewer true value-add shots, and more “held tight” assets"
+        ]
+      },
+
+      "lake-country": {
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,644.33 per month" },
+          { label:"Rent Growth (YoY)", value:"-0.13%" },
+          { label:"Rental Vacancy", value:"3.3% (≈96.7% occupancy)" },
+          { label:"Unemployment", value:"2.5%" },
+          { label:"Population Growth", value:"+313 people per year" },
+          { label:"Median Household Income (County)", value:"$104,100" },
+          { label:"Home Value Growth (YoY)", value:"+4.4%" },
+          { label:"Development Pipeline", value:"Westrock Residences (Hartland) 267 new Class A units; Ridgeview Apartments (Pewaukee) 161 units delivering around early 2026; Kirkland Crossings (Pewaukee) 77-unit independent living expansion underway" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"A 3.3% rental vacancy rate signals a tight market. Even with new deliveries, Lake Country has stayed an in-demand suburb cluster for renters who want quality housing outside the city." },
+          { heading:"Expanding Job Base", body:"This submarket benefits from Waukesha County’s strong fundamentals and continued investment, plus meaningful housing development activity that follows sustained demand." },
+          { heading:"Location + Lifestyle Advantage", body:"Lake Country is one of the premium suburban moves from Milwaukee. Lake access, high-performing schools, and an easy commute to the Milwaukee job base are a big part of why tenants choose the burbs over the city." }
+        ],
+        watch: [
+          "Supply pipeline matters here: at least 500+ units are in the visible near-term pipeline from a handful of large projects",
+          "Rent growth can look uneven: new Class A supply tends to pressure luxury rents first, while workforce housing often holds up better",
+          "Competition is real: Lake Country is a “destination suburb” and pricing is competitive because a lot of buyers want in"
+        ]
+      },
+
+      "west-allis": {
+        indicatorsTitle: "Key Market Indicators (Late 2025 / Early 2026)",
+        indicators: [
+          { label:"Average Rent", value:"~$1,254 per month" },
+          { label:"Rent Growth (YoY)", value:"~+1.3%" },
+          { label:"Rental Vacancy", value:"~7.35%" },
+          { label:"Unemployment", value:"~3.0%" },
+          { label:"Population Growth", value:"~+442 people per year" },
+          { label:"Median Household Income (City)", value:"~$69,685" },
+          { label:"Home Value Growth (YoY)", value:"~+2.9%" },
+          { label:"Development Pipeline", value:"The Revv (247 units) now open and leasing; The Axis Apartments (147 units) breaking ground late 2025; Union Green mixed use project adding apartments and townhomes" }
+        ],
+        why: [
+          { heading:"Lower Barrier to Entry", body:"West Allis offers more attainable pricing than many surrounding Milwaukee suburbs, creating an accessible entry point for smaller and mid sized multifamily investors seeking stable demand without core urban pricing." },
+          { heading:"Steady Demand with Improving Fundamentals", body:"Average rents remain affordable relative to Milwaukee’s downtown core, supporting consistent renter demand. While rent growth is modest, occupancy remains healthy across much of the existing stock." },
+          { heading:"Proximity to Milwaukee with Local Momentum", body:"Located immediately west of Milwaukee, West Allis benefits from commuter access to major employment centers while increasingly developing its own identity through new residential and mixed use projects." }
+        ],
+        watch: [
+          "West Allis contains a high volume of historic and older single family homes and small apartment buildings, which can have higher turnover or longer vacancy periods compared to modern Class A communities downtown",
+          "Newer apartment deliveries may temporarily pressure rent growth in select pockets, while older workforce housing rents have remained more stable",
+          "West Allis has not historically been viewed as a premier submarket, but redevelopment activity, corridor improvements, and new housing projects suggest a gradual shift that investors should monitor closely",
+          "As the area continues to evolve, investor interest has increased, particularly among value add buyers, which can compress yields on well located assets"
+        ]
+      },
+
+      "wauwatosa": {
+        indicatorsTitle: "Key Market Indicators (Most Recent Available 2024 to 2026)",
+        indicators: [
+          { label:"Average Rent", value:"$1,658.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+0.66%" },
+          { label:"Rental Vacancy (26+ unit)", value:"5.9% (≈94.1% occupancy)" },
+          { label:"Unemployment (Milwaukee MSA)", value:"3.0%" },
+          { label:"Population Growth", value:"+97 people per year" },
+          { label:"Median Household Income (County)", value:"$62,118" },
+          { label:"Home Value Growth (YoY)", value:"+4.1%" },
+          { label:"Development Pipeline", value:"Mayfair Mall redevelopment concept includes 850+ rental apartments (phased); Harlow and Hem planned 157 unit luxury community in the Village area; Vista Village delivered or planned 153 apartment homes downtown" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Even with a 5.9% vacancy reading for larger properties, Wauwatosa rents are holding and demand stays sticky because the city is land constrained and highly desirable for renters who want close in suburbs." },
+          { heading:"Expanding Job Base", body:"Wauwatosa sits in the core of the Milwaukee medical and employment corridor, which tends to support stable renter demand through cycles." },
+          { heading:"Location + Lifestyle Advantage", body:"This is one of the most in demand close in suburbs: walkable Village nodes, strong amenities, and quick access to Milwaukee, plus the broader suburban shift across the county keeps pushing demand outward from the city." }
+        ],
+        watch: [
+          "Supply pipeline is meaningful for a submarket this size, with multiple Class A projects that can pressure top tier rents first",
+          "Pricing is competitive and deal flow can be thin, especially for properties with true value add upside",
+          "A lot of inventory is older and smaller, so budget for CapEx and operational inefficiencies",
+          "Tenant preferences can split: new Class A absorbs at the high end while older stock may need targeted upgrades to stay competitive"
+        ]
+      },
+
+      "green-bay": {
+        indicatorsTitle: "Key Market Indicators (Late 2024)",
+        indicators: [
+          { label:"Average Rent", value:"$1,097.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+4.0%" },
+          { label:"Rental Vacancy", value:"3.6% (≈96.4% occupancy)" },
+          { label:"Unemployment", value:"2.4%" },
+          { label:"Population Growth", value:"+1,725 people per year" },
+          { label:"Median Household Income (County)", value:"$77,490" },
+          { label:"Development Pipeline", value:"1,025 multifamily units permitted in 2024; Nova Green Bay (downtown) 268 units; Merge Urban Development (north side) 225 market rate units" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Vacancy at 3.6% and positive rent growth signal a tight rental market. In-place occupancy supports stable cash flow underwriting." },
+          { heading:"Employment Base That Actually Drives Renter Demand", body:"Green Bay’s demand is rooted in year-round employers (healthcare, manufacturing, education, logistics) rather than one single driver, which helps keep renter demand durable across cycles." },
+          { heading:"Downtown and Infill Momentum", body:"The city is actively adding newer product in and around downtown and targeted nodes, which tends to lift nearby B and workforce stock through amenity spillover and neighborhood upgrades." }
+        ],
+        watch: [
+          "New supply is real: a growing pipeline can cap Class A rent growth first, even if workforce stays steadier",
+          "Deal flow can be thin: you may need to win on speed, relationships, and off-market sourcing",
+          "Product mix matters: newer nodes vs older stock will underwrite very differently (CapEx, utilities, tenant base)"
+        ]
       }
     };
 
     function safeText(v){ return (v === null || v === undefined) ? "" : String(v); }
 
     function renderDetail(marketId){
-      const detail = MARKET_DETAILS[marketId];
       const imgEl = document.getElementById('market-detail-image');
       const contentEl = document.getElementById('market-detail-content');
 
-      if (!detail) {
-        // No data yet: show the photo + a simple “coming soon” without inventing anything
-        imgEl.src = "assets/market-rk.jpg";
-        imgEl.alt = "Market photo";
+      // Always use the image naming convention
+      imgEl.src = marketImageFor(marketId);
+      imgEl.alt = "Market photo";
 
-        const name = (MARKETS.find(x => x.id === marketId)?.name) || "Market";
+      // Find display name from MARKETS list
+      const marketName = (MARKETS.find(x => x.id === marketId)?.name) || "Market";
+
+      const detail = MARKET_DETAILS[marketId];
+      if (!detail) {
         contentEl.innerHTML = `
-          <h3 style="margin:0 0 6px;color:var(--navy)">Friday Submarket Spotlight: ${safeText(name)}, WI</h3>
+          <h3 style="margin:0 0 6px;color:var(--navy)">${safeText(marketName)}</h3>
           <p style="margin:0;color:var(--muted)">Details coming soon.</p>
         `;
         return;
       }
-
-      imgEl.src = detail.image || "assets/market-rk.jpg";
-      imgEl.alt = detail.name ? (detail.name + " photo") : "Market photo";
 
       const indicatorsHtml = (detail.indicators || []).length ? `
         <div class="market-section-title">${safeText(detail.indicatorsTitle || "Key Market Indicators")}</div>
@@ -445,7 +721,7 @@
       ` : "";
 
       contentEl.innerHTML = `
-        <h3 style="margin:0 0 6px;color:var(--navy)">${safeText(detail.title || ("Friday Submarket Spotlight: " + detail.name + ", WI"))}</h3>
+        <h3 style="margin:0 0 6px;color:var(--navy)">${safeText(marketName)}</h3>
         ${indicatorsHtml}
         ${whyHtml}
         ${watchHtml}
@@ -476,14 +752,17 @@
         listEl.appendChild(btn);
       });
 
-      // Start with Racine selected (since we have real data filled in for it)
-      const first = document.querySelector('.market-pill[data-id="racine"]') || document.querySelector('.market-pill');
-      if (first) {
-        first.setAttribute('aria-selected','true');
-        renderDetail(first.dataset.id);
+      // Start on Waukesha (has full data + your hero image already references it)
+      const startId = "waukesha";
+      const startBtn = document.querySelector('.market-pill[data-id="'+startId+'"]') || document.querySelector('.market-pill');
+      if (startBtn) {
+        startBtn.setAttribute('aria-selected','true');
+        renderDetail(startBtn.dataset.id);
       }
     }
+  </script>
 
+  <script>
     // Keep your existing content/site.json wiring for the rest of the page
     fetch('content/site.json')
       .then(r => r.json())
@@ -491,7 +770,6 @@
         document.getElementById('hero-title').textContent = data.hero.title;
         document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
 
-        // Keep this lead editable via site.json if you want
         document.getElementById('markets-lead').textContent = data.markets.lead || document.getElementById('markets-lead').textContent;
 
         document.getElementById('sub-title').textContent = data.subscribe.title;
@@ -524,11 +802,9 @@
           document.querySelector('.contact .info').appendChild(link);
         }
 
-        // Init markets after content loads
         initMarketsUI();
       })
       .catch(() => {
-        // If site.json fails for some reason, still render markets
         initMarketsUI();
       });
 
