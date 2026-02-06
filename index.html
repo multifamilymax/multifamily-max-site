@@ -380,6 +380,32 @@
 
     // Details provided by you (no invented stats)
     const MARKET_DETAILS = {
+      "milwaukee": {
+  spotlight: "𝙁𝙧𝙞𝙙𝙖𝙮 𝙎𝙪𝙗𝙢𝙖𝙧𝙠𝙚𝙩 𝙎𝙥𝙤𝙩𝙡𝙞𝙜𝙝𝙩: 𝙈𝙞𝙡𝙬𝙖𝙪𝙠𝙚𝙚, 𝙒𝙄",
+  indicatorsTitle: "Key Market Indicators (Most Recent Available)",
+  indicators: [
+    { label:"Average Rent", value:"$1,542.00 per month" },
+    { label:"Rent Growth (YoY)", value:"+2.1%" },
+    { label:"Rental Vacancy", value:"5.6% (≈94.4% occupancy)" },
+    { label:"Unemployment", value:"3.0%" },
+    { label:"Population Growth", value:"+6,563 people per year (+1.1%)" },
+    { label:"Median Household Income (County)", value:"$55,216" },
+    { label:"Home Value Growth (YoY)", value:"+4.0%" },
+    { label:"Development Pipeline", value:"2024 completions: 3,066 units; 2025 completions: 1,566 units" }
+  ],
+  why: [
+    { heading:"Strong Demand + Steady Occupancy", body:"Vacancy in the mid 6% range and positive rent growth point to durable renter demand, even with new deliveries." },
+    { heading:"Neighborhood by Neighborhood Value Plays", body:"Milwaukee is not one market. The spread between core neighborhoods and value submarkets creates real upside for renovation, management improvement, and unit mix optimization." },
+    { heading:"Supply Wave Is Easing", body:"New completions are projected to cool versus the recent peak, which can take pressure off rent growth and stabilize leasing across quality assets." }
+  ],
+  watch: [
+    "Rent growth is positive but modest right now, underwriting needs to be disciplined",
+    "New Class A deliveries can pull demand upward and soften leasing for older B product in nearby pockets",
+    "Operating costs and taxes vary heavily by location and can swing returns more than rent does",
+    "Investor competition remains strong for well located assets, especially anything with a clear business plan"
+  ]
+},
+
       "madison": {
         spotlight: "𝙁𝙧𝙞𝙙𝙖𝙮 𝙎𝙪𝙗𝙢𝙖𝙧𝙠𝙚𝙩 𝙎𝙥𝙤𝙩𝙡𝙞𝙜𝙝𝙩: 𝙈𝙖𝙙𝙞𝙨𝙤𝙣, 𝙒𝙄",
         indicatorsTitle: "Key Market Indicators (Late 2025)",
@@ -785,7 +811,7 @@
       });
 
       // Start on Waukesha (has full data + your hero image already references it)
-      const startId = "waukesha";
+      const startId = "milwaukee";
       const startBtn = document.querySelector('.market-pill[data-id="'+startId+'"]') || document.querySelector('.market-pill');
       if (startBtn) {
         startBtn.setAttribute('aria-selected','true');
