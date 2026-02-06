@@ -380,6 +380,33 @@
 
     // Details provided by you (no invented stats)
     const MARKET_DETAILS = {
+      "madison": {
+        spotlight: "𝙁𝙧𝙞𝙙𝙖𝙮 𝙎𝙪𝙗𝙢𝙖𝙧𝙠𝙚𝙩 𝙎𝙥𝙤𝙩𝙡𝙞𝙜𝙝𝙩: 𝙈𝙖𝙙𝙞𝙨𝙤𝙣, 𝙒𝙄",
+        indicatorsTitle: "Key Market Indicators (Late 2025)",
+        indicators: [
+          { label:"Average Rent", value:"$1,612.00 per month" },
+          { label:"Rent Growth (YoY)", value:"+3.00%" },
+          { label:"Rental Vacancy", value:"5.3% (≈94.7% occupancy)" },
+          { label:"Unemployment", value:"2.2%" },
+          { label:"Population Growth", value:"+3,680 people per year (city projection)" },
+          { label:"Median Household Income (County)", value:"$89,975" },
+          { label:"Home Value Growth (YoY)", value:"+2.3%" },
+          { label:"Rental Demand Forecast", value:"9,675 new rental units over 3 years (≈3,225 per year)" },
+          { label:"Employer Momentum", value:"UW Madison enrollment: 51,822 (Fall 2025); Epic Systems continued expansion in Verona (regional demand driver); Large-scale infill and mixed-use proposals continue downtown and near job nodes" }
+        ],
+        why: [
+          { heading:"Strong Demand + Limited Supply", body:"Vacancy is still tight for a major Midwest market, and rents are still moving up. Even with meaningful construction, the forward demand profile remains large." },
+          { heading:"Expanding Job Base", body:"Madison’s demand is anchored by durable employment: the UW system, healthcare, and the Epic ecosystem continue to support high-quality renter demand across the metro." },
+          { heading:"Location + Lifestyle Advantage", body:"Madison’s lakefront core, strong amenity base, and high-income county profile keep absorption healthy, especially for well-located assets near downtown, campus, and major employment corridors." }
+        ],
+        watch: [
+          "A large development pipeline can soften Class A rent growth first",
+          "Submarket selection matters: results vary widely by asset vintage and proximity to job nodes",
+          "Expect strong competition for “clean” deals in core Madison and close-in suburbs",
+          "Higher-cost projects are more sensitive to leasing velocity and concessions"
+        ]
+      },
+
       "racine": {
         indicatorsTitle: "Key Market Indicators (Late 2025)",
         indicators: [
@@ -697,6 +724,10 @@
         return;
       }
 
+      const spotlightHtml = detail.spotlight ? `
+        <div style="margin:0 0 10px;color:var(--muted);font-weight:700">${safeText(detail.spotlight)}</div>
+      ` : "";
+
       const indicatorsHtml = (detail.indicators || []).length ? `
         <div class="market-section-title">${safeText(detail.indicatorsTitle || "Key Market Indicators")}</div>
         <ul class="market-kpi">
@@ -722,6 +753,7 @@
 
       contentEl.innerHTML = `
         <h3 style="margin:0 0 6px;color:var(--navy)">${safeText(marketName)}</h3>
+        ${spotlightHtml}
         ${indicatorsHtml}
         ${whyHtml}
         ${watchHtml}
