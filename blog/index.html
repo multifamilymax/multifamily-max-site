@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="../assets/favicon.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Market Insights & Newsletter | Multifamily Max | Milwaukee Wisconsin</title>
+  <meta name="description" content="Monthly multifamily market reports, deal analysis, and investment insights for Southern Wisconsin apartment building investors. Milwaukee, Madison, Waukesha, Racine, Kenosha, and beyond." />
+  <meta name="keywords" content="Milwaukee multifamily market report, Wisconsin apartment investment newsletter, Southern Wisconsin multifamily insights, Milwaukee cap rates, Madison apartment market, Wisconsin real estate investment blog" />
+  <link rel="canonical" href="https://multifamily-max.com/blog/" />
+  <meta name="author" content="Max Fiascone" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:title" content="Market Insights & Newsletter | Multifamily Max" />
+  <meta property="og:description" content="Monthly multifamily market reports and investment insights for Southern Wisconsin apartment building investors." />
+  <meta property="og:image" content="https://multifamily-max.com/assets/social-share.jpg" />
+  <meta property="og:url" content="https://multifamily-max.com/blog/" />
+  <meta property="og:type" content="website" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Multifamily Max Market Insights",
+    "description": "Monthly multifamily market reports, deal analysis, and investment insights for Southern Wisconsin apartment building investors.",
+    "url": "https://multifamily-max.com/blog/",
+    "author": {
+      "@type": "Person",
+      "name": "Max Fiascone",
+      "jobTitle": "Multifamily Investment Sales Broker",
+      "url": "https://multifamily-max.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Multifamily Max",
+      "url": "https://multifamily-max.com",
+      "logo": "https://multifamily-max.com/assets/logo.png"
+    }
+  }
+  </script>
+
+  <style>
+    :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
+    *{ box-sizing:border-box }
+    html{ scroll-behavior:smooth }
+    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--dark); background:#fff }
+    a{ color:inherit; text-decoration:none }
+    .container{ max-width:1100px; margin:0 auto; padding:0 20px }
+
+    header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
+    .brand-img{ width:180px; height:auto; object-fit:contain; display:block }
+    .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
+    .cta-btn{ background:var(--teal); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
+    @media (max-width:960px){ .brand-img{ width:130px } }
+
+    .page-hero{ background:var(--navy); color:#fff; padding:64px 0 48px }
+    .page-hero h1{ font-size:40px; margin:0 0 12px; line-height:1.15 }
+    .page-hero p{ font-size:18px; color:#d1d5db; margin:0; max-width:640px }
+
+    .blog-controls{ padding:32px 0 0 }
+    .tag-filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px }
+    .tag-btn{ border:1px solid #e5e7eb; background:#fff; border-radius:999px; padding:8px 18px; font-weight:600; font-size:14px; cursor:pointer; transition:background .15s, border-color .15s, color .15s }
+    .tag-btn:hover{ border-color:var(--teal); color:var(--teal) }
+    .tag-btn.active{ background:var(--navy); color:#fff; border-color:var(--navy) }
+
+    .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; padding-bottom:64px }
+    .blog-card{ border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#fff; display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s }
+    .blog-card:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.12) }
+    .blog-card-body{ padding:22px; flex:1; display:flex; flex-direction:column }
+    .blog-tag{ display:inline-block; background:#ecfdf5; color:#059669; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 10px; border-radius:999px; margin-bottom:10px }
+    .blog-tag.market-report{ background:#ecfdf5; color:#059669 }
+    .blog-tag.deal-insights{ background:#eff6ff; color:#2563eb }
+    .blog-tag.newsletter{ background:#fdf4ff; color:#9333ea }
+    .blog-tag.construction{ background:#fff7ed; color:#ea580c }
+    .blog-card h2{ margin:0 0 8px; font-size:17px; line-height:1.35; color:var(--navy) }
+    .blog-card p{ margin:0 0 16px; color:#6b7280; font-size:14px; line-height:1.6; flex:1 }
+    .blog-card-meta{ font-size:12px; color:#9ca3af; margin-bottom:10px }
+    .blog-read-more{ font-weight:700; color:var(--teal); font-size:14px; display:inline-flex; align-items:center; gap:4px; margin-top:auto }
+    .blog-read-more:hover{ color:#059669 }
+
+    .no-posts{ text-align:center; padding:60px 0; color:var(--muted) }
+
+    .subscribe-strip{ background:#294651; color:#fff; padding:48px 0 }
+    .subscribe-strip-inner{ display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center }
+    .subscribe-strip h2{ margin:0 0 8px; font-size:26px }
+    .subscribe-strip p{ margin:0; color:#d1d5db }
+    .sub-form{ display:flex; gap:10px }
+    .sub-form input{ flex:1; padding:12px 14px; border-radius:10px; border:1px solid #3a5561; background:#17303a; color:#fff; font-size:15px; outline:none }
+    .sub-form button{ background:var(--teal); color:#fff; border:none; padding:12px 20px; border-radius:10px; font-weight:700; cursor:pointer; white-space:nowrap }
+
+    footer{ padding:26px 0; border-top:1px solid #e5e7eb; color:#6b7280; text-align:center; font-size:14px }
+    .footer-logos{ display:flex; justify-content:center; align-items:center; gap:18px; flex-wrap:wrap; margin:0 0 12px }
+    .footer-logos img{ height:40px; width:auto; object-fit:contain }
+    .footer-logos img[alt*="Apartment Cash Flow"]{ height:60px; max-width:220px }
+
+    @media(max-width:960px){ .blog-grid{ grid-template-columns:1fr 1fr } .subscribe-strip-inner{ grid-template-columns:1fr } .sub-form{ flex-direction:column } }
+    @media(max-width:600px){ .blog-grid{ grid-template-columns:1fr } .page-hero h1{ font-size:30px } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="/" aria-label="Multifamily Max home">
+        <img src="../assets/logo.png" alt="Multifamily Max" class="brand-img" />
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/#markets">Markets</a>
+        <a href="/#subscribe">Subscribe</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/blog/" style="color:var(--teal)">Insights</a>
+        <a href="/#contact" class="cta-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>Market Insights &amp; Newsletter</h1>
+        <p>In-depth market reports, deal analysis, and investment commentary for Southern Wisconsin multifamily investors — published monthly by Max Fiascone.</p>
+      </div>
+    </div>
+
+    <section class="subscribe-strip" style="padding:36px 0">
+      <div class="container subscribe-strip-inner">
+        <div>
+          <h2 style="margin:0 0 6px;font-size:22px">Subscribe to Multifamily Max Invest</h2>
+          <p style="margin:0;color:#d1d5db">In-depth construction reports, expert deal packages, and market insights — delivered monthly.</p>
+        </div>
+        <div>
+          <form id="blog-subscribe-form-top" novalidate>
+            <input type="text" name="hp" style="display:none">
+            <div class="sub-form">
+              <input type="email" name="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </div>
+            <div id="blog-sub-status-top" style="margin-top:10px;font-size:14px;color:#d1d5db"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="container blog-controls">
+      <div class="tag-filters" role="group" aria-label="Filter by category">
+        <button class="tag-btn active" data-tag="all" onclick="filterPosts('all')">All Issues</button>
+        <button class="tag-btn" data-tag="Market Report" onclick="filterPosts('Market Report')">Market Reports</button>
+        <button class="tag-btn" data-tag="Deal Insights" onclick="filterPosts('Deal Insights')">Deal Insights</button>
+        <button class="tag-btn" data-tag="Newsletter" onclick="filterPosts('Newsletter')">Newsletter</button>
+        <button class="tag-btn" data-tag="Construction" onclick="filterPosts('Construction')">Construction</button>
+      </div>
+
+      <div class="blog-grid" id="blog-grid"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logos">
+        <img src="../assets/logo.png" alt="Multifamily Max logo">
+        <span style="opacity:.35">|</span>
+        <img src="../assets/apartment-cash-flow-logo.png" alt="Apartment Cash Flow logo">
+      </div>
+      <div style="font-size:12px;color:#9ca3af;margin-bottom:6px">Licensed through <strong>Apartment Cash Flow, Inc.</strong> (Sponsoring Broker).</div>
+      © <span id="y"></span> Multifamily Max. All rights reserved. &nbsp;|&nbsp;
+      <a href="/privacy/" style="color:#9ca3af;text-decoration:underline">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    // ============================================================
+    // BLOG POSTS — Add new posts to the TOP of this array.
+    // To add a post:
+    //   1. Create a folder: /blog/your-post-slug/
+    //   2. Add an index.html inside that folder
+    //   3. Add the post object here with featured: true
+    //
+    // Tag options: "Market Report" | "Deal Insights" | "Newsletter" | "Construction"
+    // ============================================================
+    const ALL_POSTS = [
+      {
+        slug: "/blog/wisconsin-multifamily-market-update-february-2026/",
+        title: "Wisconsin Multifamily Market Update — February 2026",
+        date: "February 2026",
+        tag: "Market Report",
+        excerpt: "$264M in volume, 630 units traded, and $100M+ into one Pleasant Prairie submarket in a single month. Plus: why new construction is stalling and what it means for existing owners.",
+        featured: true
+      },
+      {
+        slug: "/blog/wisconsin-multifamily-market-update-january-2026/",
+        title: "Wisconsin Multifamily Market Update — January 2026",
+        date: "January 2026",
+        tag: "Market Report",
+        excerpt: "22 new deals, $106.5M in volume, and a clear pickup in deal activity. Plus: the refinance wall, return on equity reality check, and new supply hitting Madison, Milwaukee, and Green Bay.",
+        featured: true
+      },
+      {
+        slug: "/blog/wisconsin-multifamily-market-update-december-2025/",
+        title: "Wisconsin Multifamily Market Update — December 2025",
+        date: "December 2025",
+        tag: "Market Report",
+        excerpt: "December capped 2025 with real deals closing and well-priced assets moving in 2–4 days. Plus: the full 2026 outlook and a developer cautionary tale from Middleton.",
+        featured: true
+      },
+      {
+        slug: "/blog/wisconsin-multifamily-market-update-november-2025/",
+        title: "Wisconsin Multifamily Market Update — November 2025",
+        date: "November 2025",
+        tag: "Market Report",
+        excerpt: "1,064 transactions and 35,199 units sold YTD — already past all of 2024. Value-add momentum, speed to escrow data, and which Wisconsin markets are commanding the highest price per unit.",
+        featured: true
+      }
+    ];
+
+    const TAG_SLUG = { "Market Report":"market-report", "Deal Insights":"deal-insights", "Newsletter":"newsletter", "Construction":"construction" };
+
+    function tagClass(tag){
+      return (TAG_SLUG[tag] || tag.toLowerCase().replace(/\s+/g,'-'));
+    }
+
+    function renderPosts(posts){
+      const grid = document.getElementById('blog-grid');
+      if (!posts.length){
+        grid.innerHTML = '<div class="no-posts" style="grid-column:1/-1"><p>No posts in this category yet. Check back soon!</p></div>';
+        return;
+      }
+      grid.innerHTML = posts.map(p => `
+        <article class="blog-card" data-tag="${p.tag}">
+          <div class="blog-card-body">
+            <span class="blog-tag ${tagClass(p.tag)}">${p.tag}</span>
+            <div class="blog-card-meta">${p.date}</div>
+            <h2><a href="${p.slug}" style="color:inherit">${p.title}</a></h2>
+            <p>${p.excerpt}</p>
+            <a href="${p.slug}" class="blog-read-more">Read More &rarr;</a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function filterPosts(tag){
+      document.querySelectorAll('.tag-btn').forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+      const filtered = tag === 'all' ? ALL_POSTS : ALL_POSTS.filter(p => p.tag === tag);
+      renderPosts(filtered);
+    }
+
+    renderPosts(ALL_POSTS);
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <script>
+    const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';
+    const TOKEN = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';
+    const bsft = document.getElementById('blog-subscribe-form-top');
+    const bsst = document.getElementById('blog-sub-status-top');
+
+    async function submitSubscribe(form, statusEl) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const hp = form.querySelector('[name="hp"]');
+        if (hp && hp.value) return;
+        const email = form.querySelector('[name="email"]').value;
+        statusEl.textContent = 'Sending…';
+        try {
+          const params = new URLSearchParams({ email, kind:'subscribe', token:TOKEN, page:location.href });
+          const res = await fetch(FORMS_API, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'}, body:params.toString() });
+          const txt = await res.text();
+          let json = {};
+          try { json = JSON.parse(txt); } catch(_){}
+          statusEl.textContent = (res.ok && json.ok) ? "You're on the list!" : 'Error — please try again.';
+          if (res.ok && json.ok) form.reset();
+        } catch(err){ statusEl.textContent = 'Network error. Please try again.'; }
+      });
+    }
+
+    submitSubscribe(bsft, bsst);
+  </script>
+
+  <!-- HubSpot -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/244135941.js"></script>
+</body>
+</html>
