@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Active Listings | Multifamily Max</title>
+  <meta name="description" content="Exclusive multifamily and mixed-use investment opportunities across Southern Wisconsin. Request the offering memorandum for any active listing." />
+  <link rel="icon" href="../assets/favicon.ico" />
+  <style>
+    :root{ --navy:#0E2E50; --teal:#10B981; --light:#F5F7FA; --dark:#111827; --muted:#6B7280; --shadow:0 10px 30px rgba(0,0,0,.08) }
+    *{ box-sizing:border-box } html{ scroll-behavior:smooth }
+    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; color:var(--dark); background:#fff }
+    a{ color:inherit; text-decoration:none }
+    .container{ max-width:1100px; margin:0 auto; padding:0 20px }
+
+    header{ position:sticky; top:0; z-index:50; background:#fff; box-shadow:var(--shadow) }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:12px 0 }
+    .brand-img{ width:427px; height:91px; object-fit:contain; display:block }
+    @media(max-width:960px){ .brand-img{ width:260px; height:auto } }
+    .nav a{ margin-left:18px; font-weight:600; color:#1f2937 }
+    .cta-btn{ background:var(--teal); color:#fff !important; padding:10px 14px; border-radius:10px; font-weight:700; display:inline-block }
+
+    footer{ padding:26px 0; border-top:1px solid #e5e7eb; color:#6b7280 }
+
+    .page-header{ background:var(--navy); color:#fff; padding:60px 0 44px }
+    .page-header .label{ font-size:12px; font-weight:700; color:var(--teal); letter-spacing:.12em; text-transform:uppercase; margin-bottom:12px }
+    .page-header h1{ font-size:38px; line-height:1.15; margin:0 0 14px; color:#fff }
+    @media(max-width:600px){ .page-header h1{ font-size:28px } }
+    .page-header p{ font-size:17px; color:#d1d5db; margin:0; max-width:680px }
+
+    .page-body{ padding:52px 0 72px }
+    .back-link{ display:inline-flex; align-items:center; gap:6px; color:var(--navy); font-weight:600; font-size:14px; margin-bottom:36px }
+    .back-link:hover{ color:var(--teal) }
+
+    .listings-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px }
+    @media(max-width:700px){ .listings-grid{ grid-template-columns:1fr } }
+
+    .listing-card{ border:1px solid #e5e7eb; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#fff; display:flex; flex-direction:column }
+    .listing-card-img{ height:200px; background:linear-gradient(135deg,#0E2E50 60%,#10B981 100%); position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:20px }
+    .listing-card-img img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.35 }
+    .listing-card-img-text{ position:relative }
+    .listing-type-badge{ font-size:11px; font-weight:700; color:var(--teal); letter-spacing:.12em; text-transform:uppercase; margin-bottom:6px }
+    .listing-card-img h3{ margin:0; color:#fff; font-size:19px; line-height:1.25 }
+    .listing-card-img h3 span{ font-weight:400; font-size:15px }
+
+    .listing-card-body{ padding:20px 22px; flex:1; display:flex; flex-direction:column }
+    .stats-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:16px }
+    .stat{ text-align:center; background:var(--light); border-radius:10px; padding:10px 6px }
+    .stat-num{ font-size:18px; font-weight:800; color:var(--navy) }
+    .stat-label{ font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; margin-top:2px }
+
+    .listing-card-body p{ color:var(--muted); font-size:14px; line-height:1.65; margin:0 0 18px; flex:1 }
+    .om-btn{ background:var(--teal); color:#fff; padding:10px 18px; border-radius:10px; font-weight:700; font-size:14px; display:inline-block; align-self:flex-start }
+    .om-btn:hover{ background:#0ea572 }
+
+    .no-listings{ color:var(--muted); font-size:16px; padding:32px 0 }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="../index.html" aria-label="Multifamily Max">
+        <img src="../assets/logo.png" alt="Multifamily Max" class="brand-img" />
+      </a>
+      <nav>
+        <a href="../index.html#markets">Markets</a>
+        
+        <a href="../listings/">Listings</a>
+        <a href="../index.html#subscribe">Subscribe</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#blog">Insights</a>
+        <a href="../index.html#contact" class="cta-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <div class="label">Multifamily Max — Exclusive Listings</div>
+      <h1>Active Listings</h1>
+      <p>Multifamily and mixed-use investment opportunities across Southern Wisconsin. Request the offering memorandum for any listing below.</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+      <a href="../index.html" class="back-link">&larr; Back to Home</a>
+
+      <div class="listings-grid">
+
+        <!-- LISTING: 309-313 W Milwaukee St -->
+        <div class="listing-card">
+          <a href="309-w-milwaukee-janesville/access.html" class="listing-card-img">
+            <img src="../assets/listing-309-w-milwaukee.jpg" alt="309-313 W Milwaukee St, Janesville" onerror="this.style.display='none'" />
+            <div class="listing-card-img-text">
+              <div class="listing-type-badge">Mixed-Use</div>
+              <h3>309–313 W Milwaukee St<br/><span>Janesville, WI</span></h3>
+            </div>
+          </a>
+          <div class="listing-card-body">
+            <div class="stats-row">
+              <div class="stat">
+                <div class="stat-num">7.14%</div>
+                <div class="stat-label">In-Place Cap</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">9.94%</div>
+                <div class="stat-label">Pro Forma Cap</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">$650K</div>
+                <div class="stat-label">Price</div>
+              </div>
+            </div>
+            <p>4 apartments + 3 retail units. Strong in-place income with meaningful upside to market rents on the commercial side.</p>
+            <a href="309-w-milwaukee-janesville/access.html" class="om-btn">Request Offering Memorandum &rarr;</a>
+          </div>
+        </div>
+
+        <!-- ADD FUTURE LISTINGS HERE — copy the block above and update the details -->
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Multifamily Max. All rights reserved.</div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
