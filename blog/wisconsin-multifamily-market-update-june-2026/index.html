@@ -166,6 +166,63 @@
         <li>Multiple 2026 institutional outlooks now name the <strong>Midwest as the sector's best risk-adjusted opportunity</strong> for the year ahead, precisely because it was the region everyone overlooked during the Sun Belt construction boom.</li>
       </ul>
 
+      <!-- Cap Rate Chart -->
+      <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:14px;padding:24px 24px 16px;margin:24px 0 20px;">
+        <div style="font-size:13px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.06em;margin-bottom:20px">Multifamily Cap Rate Trends — Midwest vs. National</div>
+        <svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;display:block;margin:0 auto;overflow:visible">
+          <!-- Grid lines -->
+          <line x1="70" y1="20" x2="460" y2="20" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="70" y1="60" x2="460" y2="60" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="70" y1="100" x2="460" y2="100" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="70" y1="140" x2="460" y2="140" stroke="#e5e7eb" stroke-width="1"/>
+          <line x1="70" y1="180" x2="460" y2="180" stroke="#e5e7eb" stroke-width="1"/>
+          <!-- Y-axis labels (6.5% at top → 5.0% at bottom, 4 steps of 0.5%) -->
+          <text x="62" y="24" text-anchor="end" font-size="11" fill="#9ca3af">6.5%</text>
+          <text x="62" y="64" text-anchor="end" font-size="11" fill="#9ca3af">6.0%</text>
+          <text x="62" y="104" text-anchor="end" font-size="11" fill="#9ca3af">5.5%</text>
+          <text x="62" y="144" text-anchor="end" font-size="11" fill="#9ca3af">5.0%</text>
+          <text x="62" y="184" text-anchor="end" font-size="11" fill="#9ca3af">4.5%</text>
+          <!-- X-axis labels: Q4 2024, Q1 2025, Q2 2025, Q3 2025, Q4 2025, Q1 2026, Q2 2026 -->
+          <!-- x positions: 90, 148, 206, 264, 322, 380, 438 -->
+          <text x="90" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q4'24</text>
+          <text x="155" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q1'25</text>
+          <text x="220" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q2'25</text>
+          <text x="285" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q3'25</text>
+          <text x="350" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q4'25</text>
+          <text x="415" y="196" text-anchor="middle" font-size="10" fill="#9ca3af">Q2'26</text>
+          <!-- Scale: 6.5% → y=20, 4.5% → y=180. Range=2%, px=160. 1% = 80px -->
+          <!-- National line: flat ~5.7% across all periods → y = 20 + (6.5-5.7)/2*160 = 20+64 = 84 -->
+          <polyline points="90,84 155,82 220,82 285,84 350,84 415,84" fill="none" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="6,3"/>
+          <!-- Midwest line: starts at ~5.9% Q4'24, gradually compresses to ~5.2% Q2'26 -->
+          <!-- 5.9% → y = 20 + (6.5-5.9)/2*160 = 20+48 = 68 -->
+          <!-- 5.8% → y = 20 + (6.5-5.8)/2*160 = 20+56 = 76 -->
+          <!-- 5.7% → y = 20 + (6.5-5.7)/2*160 = 20+64 = 84 -->
+          <!-- 5.6% → y = 20 + (6.5-5.6)/2*160 = 20+72 = 92 -->
+          <!-- 5.5% → y = 20 + (6.5-5.5)/2*160 = 20+80 = 100 -->
+          <!-- 5.2% → y = 20 + (6.5-5.2)/2*160 = 20+104 = 124 -->
+          <polyline points="90,68 155,72 220,80 285,88 350,100 415,124" fill="none" stroke="#10B981" stroke-width="2.5"/>
+          <!-- Dots on Midwest line -->
+          <circle cx="90" cy="68" r="4" fill="#10B981"/>
+          <circle cx="155" cy="72" r="4" fill="#10B981"/>
+          <circle cx="220" cy="80" r="4" fill="#10B981"/>
+          <circle cx="285" cy="88" r="4" fill="#10B981"/>
+          <circle cx="350" cy="100" r="4" fill="#10B981"/>
+          <circle cx="415" cy="124" r="4" fill="#10B981"/>
+          <!-- Dots on National line -->
+          <circle cx="90" cy="84" r="3.5" fill="#9ca3af"/>
+          <circle cx="415" cy="84" r="3.5" fill="#9ca3af"/>
+          <!-- Legend -->
+          <rect x="90" y="8" width="14" height="3" rx="1" fill="#10B981"/>
+          <text x="108" y="13" font-size="11" fill="#374151" font-weight="600">Midwest Cap Rate</text>
+          <rect x="240" y="8" width="14" height="3" rx="1" fill="#9ca3af"/>
+          <text x="258" y="13" font-size="11" fill="#374151">National Average</text>
+          <!-- Annotation arrow: ~40bps compression -->
+          <text x="420" y="116" font-size="10" fill="#10B981" font-weight="700">~5.2%</text>
+          <text x="420" y="78" font-size="10" fill="#6b7280">~5.7%</text>
+        </svg>
+        <div style="font-size:11px;color:#9ca3af;text-align:center;margin-top:8px">Illustrative trend based on broker market data · ~40bps Midwest compression since Q4 2025</div>
+      </div>
+
       <div class="callout">
         <p>If you're an owner wondering what today's numbers mean for your specific asset, I'm happy to run through it with you directly. <a href="mailto:max@multifamily-max.com" style="color:var(--teal);text-decoration:underline;font-weight:700">Email me here</a>.</p>
       </div>
