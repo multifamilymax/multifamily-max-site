@@ -59,9 +59,23 @@
 
   <url>
     <loc>https://multifamily-max.com/blog/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://multifamily-max.com/blog/wisconsin-multifamily-market-update-july-2026/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://multifamily-max.com/blog/wisconsin-multifamily-market-update-june-2026/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
