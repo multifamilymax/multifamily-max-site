@@ -510,6 +510,10 @@
                 <input class="input input--dark" name="email" type="email" required>
               </div>
             </div>
+            <div style="margin-top:14px;">
+              <label class="small" style="color:#d1d5db" id="subscribe-captcha-label"></label>
+              <input class="input input--dark" id="subscribe-captcha-input" type="text" inputmode="numeric" autocomplete="off" placeholder="Your answer" style="margin-top:4px;">
+            </div>
             <button type="submit"
                     style="margin-top:14px;background:#10B981;color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer">
               Subscribe
@@ -591,6 +595,10 @@
                 <label class="small" style="color:#374151">Message</label>
                 <textarea class="textarea" name="message" rows="6" required></textarea>
               </div>
+            </div>
+            <div style="margin-top:14px;">
+              <label class="small" style="color:#374151" id="contact-captcha-label"></label>
+              <input class="input" id="contact-captcha-input" type="text" inputmode="numeric" autocomplete="off" placeholder="Your answer" style="margin-top:4px;">
             </div>
             <button type="submit"
                     style="margin-top:14px;background:#10B981;color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer">
@@ -1271,7 +1279,19 @@
   <script>
     const FORMS_API = 'https://script.google.com/macros/s/AKfycbwATUcqII7SFp9pFWYfMpUwM1wE4yIBdMjTbSjApqAo8Meqki1aDOMbPswNpm0VHWg2/exec';
     const TOKEN = 'f7a92e4b1c6d8e3f5b7a04c9d2e1f0ab';
-    function wireForm(formId, statusId, kind) {
+
+    function setupCaptcha(labelId, inputId) {
+      const a = Math.floor(Math.random() * 9) + 1;
+      const b = Math.floor(Math.random() * 9) + 1;
+      const label = document.getElementById(labelId);
+      const input = document.getElementById(inputId);
+      if (!label || !input) return null;
+      label.textContent = 'Quick check: what is ' + a + ' + ' + b + '?';
+      input._answer = a + b;
+      return input;
+    }
+
+    function wireForm(formId, statusId, kind, captchaInputId) {
       const form = document.getElementById(formId);
       if (!form) return;
       const status = document.getElementById(statusId);
@@ -1279,6 +1299,15 @@
         e.preventDefault();
         const hp = form.querySelector('[name="hp"]');
         if (hp && hp.value) return;
+        const captchaInput = document.getElementById(captchaInputId);
+        if (captchaInput) {
+          if (parseInt(captchaInput.value, 10) !== captchaInput._answer) {
+            status.textContent = 'Incorrect answer — please try again.';
+            setupCaptcha(captchaInputId.replace('-input', '-label'), captchaInputId);
+            captchaInput.value = '';
+            return;
+          }
+        }
         const data = Object.fromEntries(new FormData(form).entries());
         data.kind = kind; data.token = TOKEN; data.page = location.href; data.ua = navigator.userAgent;
         status.textContent = 'Sending…';
@@ -1291,6 +1320,7 @@
           if (res.ok && json.ok) {
             status.textContent = (kind === 'subscribe') ? 'Thanks! You\'re on the list.' : 'Thanks! We\'ll get back to you shortly.';
             form.reset();
+            setupCaptcha(captchaInputId.replace('-input', '-label'), captchaInputId);
           } else {
             status.textContent = 'Error: ' + (json.error || txt || ('HTTP ' + res.status));
           }
@@ -1299,8 +1329,11 @@
         }
       });
     }
-    wireForm('subscribe-form', 'subscribe-status', 'subscribe');
-    wireForm('contact-form', 'contact-status', 'contact');
+
+    setupCaptcha('subscribe-captcha-label', 'subscribe-captcha-input');
+    setupCaptcha('contact-captcha-label', 'contact-captcha-input');
+    wireForm('subscribe-form', 'subscribe-status', 'subscribe', 'subscribe-captcha-input');
+    wireForm('contact-form', 'contact-status', 'contact', 'contact-captcha-input');
   </script>
 
   <script>
